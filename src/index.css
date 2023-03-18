@@ -1,0 +1,28 @@
+body {
+  margin: 0;
+  padding: 0;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+p,
+span {
+  font-family: "Noto Sans", sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+
+
+
+
+:root {
+  --color-background: #c7d5e0;
+  --color-light-blue:#7cd6f1;
+  --color-orange:#ff4500;
+  --color-gray:#cfd0d1;
+  --color-light-gray:#eae8e8;
+}
