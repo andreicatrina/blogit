@@ -1,14 +1,23 @@
 import "./App.css";
-import { Header } from "./components/Header/Header";
 import { LandingPage } from "./components/LandingPage/LandingPage";
 import { PageLayout } from "./components/PageLayout/PageLayout";
+import { GamingPage } from "./components/GamingPage/GamingPage";
+import { Route, Routes } from "react-router-dom";
+import { SportsPage } from "./components/SportsPage/SportsPage";
 
-function App() {
+export function App() {
   return (
-    <PageLayout>
-      <LandingPage></LandingPage>
-    </PageLayout>
+    <Routes>
+      <Route
+        path="/"
+        element={
+          <PageLayout>
+            <LandingPage></LandingPage>
+          </PageLayout>
+        }
+      />
+      <Route path="/topic/gaming" element={<GamingPage />} />
+      <Route path="/topic/sports" element={<SportsPage />} />
+    </Routes>
   );
 }
-
-export default App;

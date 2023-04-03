@@ -2,38 +2,60 @@ import styled from "styled-components";
 
 export const HeaderSection = styled.section`
   display: flex;
+  justify-content: center;
   width: 100%;
   background-color: white;
   border-bottom: 1px solid #ddd;
+  height: 64px;
+  position: fixed;
+  top: 0;
+  z-index: 10;
 `;
 
 export const HeaderContainer = styled.div`
   display: flex;
   align-items: center;
-  margin: 0 auto;
+  justify-content: center;
+  /* margin: 0 auto; */
   width: 100%;
   max-width: 1600px;
   padding: 4px 12px;
   background-color: white;
+  position: fixed;
+  top: 0;
+  z-index: 10;
 `;
 
 export const LogoContainer = styled.div`
   display: flex;
-  /* align-items: center; */
+  /* align-items: flex-start; */
   flex-direction: column;
   justify-content: center;
   width: 100%;
+  padding: 0 8px;
 
-  h4 {
-    font-family: "Tilt Neon", cursive;
-    cursor: pointer;
-    font-size: 20px;
+  a {
+    display: flex;
+    justify-content: flex-start;
+    text-decoration: none;
   }
 `;
 
-export const SecondHeaderLogo = styled.h4`
+export const FirstHeaderLogo = styled.span`
+  display: flex;
+  justify-content: flex-start;
+  font-family: "Tilt Neon", cursive;
+  font-size: 20px;
+  font-weight: 700;
+  color: #1c1c1c;
+`;
+
+export const SecondHeaderLogo = styled.span`
   display: flex;
   justify-content: flex-end;
+  font-family: "Tilt Neon", cursive;
+  font-size: 20px;
+  font-weight: 700;
   rotate: 180deg;
   color: var(--color-orange);
 `;
@@ -78,6 +100,7 @@ export const LoginContainer = styled.div`
   justify-content: flex-end;
   align-items: center;
   width: 100%;
+  padding: 0 8px;
 `;
 
 export const LoginButton = styled.button`

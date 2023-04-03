@@ -6,6 +6,13 @@ export const LandingPageSection = styled.section`
   min-height: 100vh;
 `;
 
+export const SideMenuParent = styled.div`
+  width: 100%;
+  max-width: 300px;
+  max-height: 100%;
+  background-color: #fff;
+`;
+
 export const SideMenuContainer = styled.div`
   display: flex;
   flex-direction: column;
@@ -13,6 +20,8 @@ export const SideMenuContainer = styled.div`
   max-width: 270px;
   background-color: white;
   padding: 12px;
+  position: fixed;
+  top: 60px;
 `;
 
 export const PopularTrendsContainer = styled.div`
@@ -43,7 +52,7 @@ export const PopularTrendsLink = styled.a`
     width: 20px;
     height: 20px;
     rotate: 290deg;
-    color: var(--color-light-blue);
+    color: var(--color-orange);
     background-color: white;
   }
 
@@ -76,7 +85,15 @@ export const TopicContainer = styled.div`
   cursor: pointer;
 
   span {
+    color: #1c1c1c;
+  }
+
+  a {
     font-weight: 300;
+    font-size: 16px;
+    text-decoration: none;
+    color: #1c1c1c;
+    font-family: "Noto-sans", sans-serif;
   }
 
   svg {
@@ -98,6 +115,7 @@ export const FeedContainer = styled.div`
   flex-direction: column;
   padding: 24px;
   width: 100%;
+  margin-top: 60px;
 `;
 
 export const TrendingTodayContainer = styled.div`
@@ -388,7 +406,7 @@ export const LinksContainer = styled.div`
   a {
     text-decoration: none;
     font-size: 12px;
-    font-weight: 600;
+    font-weight: 400;
     line-height: 14px;
     color: #1a1a1b;
     cursor: pointer;
@@ -396,6 +414,9 @@ export const LinksContainer = styled.div`
 `;
 
 export const NewsFeedContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
   width: 100%;
   max-width: 600px;
   height: 100%;
@@ -403,6 +424,8 @@ export const NewsFeedContainer = styled.div`
 `;
 export const NewsFeedPost = styled.div`
   display: flex;
+  background-color: #faf9f6;
+  border-radius: 4px;
 `;
 export const PostLikesContainer = styled.div`
   display: flex;
@@ -410,11 +433,14 @@ export const PostLikesContainer = styled.div`
   align-items: center;
   width: 100%;
   max-width: 25px;
+  padding: 8px 4px 0 4px;
+  border-radius: 4px;
 
   svg {
     width: 22px;
     height: 22px;
     color: var(--color-orange);
+    cursor: pointer;
   }
 
   span {
@@ -423,6 +449,117 @@ export const PostLikesContainer = styled.div`
 `;
 
 export const PostContainer = styled.div`
+  display: flex;
+  flex-direction: column;
   width: 100%;
   max-width: 575px;
+  height: 100%;
+  background-color: #faf9f6;
+  border-radius: 4px;
+`;
+
+export const UpperPostContainer = styled.div`
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 6px 6px 4px 4px;
+`;
+export const UpperPostTextContainer = styled.div``;
+export const VisitPostButton = styled.button`
+  width: 100%;
+  max-width: 56px;
+  height: 24px;
+  background-color: var(--color-light-blue);
+  border: none;
+  border-radius: 12px;
+  color: white;
+  font-family: "Noto Sans", sans-serif;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+`;
+
+export const BlogNamePost = styled.div`
+  font-size: 12px;
+  color: #1c1c1c;
+  font-weight: 600;
+
+  span {
+    color: #787c7e;
+    padding-left: 4px;
+  }
+`;
+
+export const MiddleContainerPost = styled.div`
+  width: 100%;
+  max-width: 575px;
+  height: 100%;
+`;
+export const MiddlePostTitleContainer = styled.div`
+  h4 {
+    padding: 4px;
+    color: #222222;
+
+    span {
+      text-align: center;
+      background-color: #2ecc71;
+      color: white;
+      padding: 2px 6px;
+      border-radius: 12px;
+      font-size: 12px;
+      margin-left: 6px;
+    }
+  }
+`;
+export const PostImageContainer = styled.div`
+  width: 100%;
+  max-width: 575px;
+  height: 100%;
+  /* max-height: 500px; */
+  margin-top: 4px;
+
+  img {
+    width: 100%;
+    height: 100%;
+    max-height: 500px;
+    object-fit: cover;
+  }
+`;
+
+export const DownPostContainer = styled.div`
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 8px;
+
+  span {
+    display: flex;
+    align-items: center;
+    gap: 2px;
+    color: #878a8c;
+    cursor: pointer;
+  }
+
+  svg {
+    color: #878a8c;
+    cursor: pointer;
+  }
+`;
+
+export const TopicsSubcategotyContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  padding: 8px 0;
+
+  span {
+    padding: 0 2px;
+    color: #7c7c7c;
+    cursor: pointer;
+
+    :hover {
+      background-color: var(--color-light-blue);
+      color: white;
+    }
+  }
 `;
