@@ -144,30 +144,27 @@ export const PopularContainer = styled.div`
   justify-content: center;
   align-items: flex-start;
   width: 100%;
-  max-width: 1300px;
-  margin: 0 auto;
+  max-width: ${(props) => props.maxWidth};
+  margin: ${(props) => props.marginAuto};
   gap: 24px;
 `;
 
 export const LeftContainer = styled.div`
   display: flex;
   justify-content: center;
-  align-items: center;
+  align-items: ${(props) => props.alignItems};
   flex-direction: column;
-
-  max-width: 600px;
+  max-width: ${(props) => props.maxWidth};
   padding: 20px 0;
   width: 100%;
-  /* gap: 24px; */
 `;
 
 export const PostsContainer = styled.div`
   display: flex;
   flex-direction: column;
-  align-items: center;
+  align-items: ${(props) => props.alignItems};
   width: 100%;
-  max-width: 1300px;
-  max-width: 600px;
+  max-width: ${(props) => props.maxWidth};
 `;
 
 export const TrendingSubjectsContainer = styled.div`
@@ -231,15 +228,74 @@ export const PopularPostsTitleDiv = styled.div`
     padding-bottom: 10px;
   }
 `;
+
+export const FilterPostsParent = styled.div`
+  display: flex;
+  justify-content: space-between;
+`;
+
 export const FilterPostsContainer = styled.div`
   display: flex;
   align-items: center;
   width: 100%;
-  max-width: 600px;
+  max-width: ${(props) => props.maxWidth};
   height: 60px;
   border-radius: 4px;
   gap: 12px;
   background-color: white;
+`;
+
+export const PostViewMenu = styled.div`
+  display: flex;
+  padding: 8px 16px;
+  border-radius: 16px;
+  position: relative;
+
+  :hover {
+    background-color: #f6f7f8;
+  }
+
+  svg {
+    width: 20px;
+    height: 20px;
+    color: rgb(124, 124, 124);
+    cursor: pointer;
+  }
+`;
+
+export const FeedViewContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  background-color: #fff;
+  padding: 8px;
+  gap: 8px;
+  border-radius: 8px;
+  -webkit-box-shadow: -2.5px -1.5px 17px -1px #a3a0a0;
+  -moz-box-shadow: -2.5px -1.5px 17px -1px #a3a0a0;
+  box-shadow: -2.5px -1.5px 17px -1px #a3a0a0;
+  position: absolute;
+  top: 40px;
+  left: 16px;
+
+  span {
+    display: flex;
+    align-items: center;
+    gap: 2px;
+    padding: 0;
+    font-size: 14px;
+    color: #7c7c7c;
+    font-weight: 600;
+    cursor: pointer;
+
+    :hover {
+      color: var(--color-light-blue);
+    }
+  }
+
+  svg {
+    width: 20px;
+    height: 20px;
+  }
 `;
 
 export const HotDiv = styled.div`
@@ -416,9 +472,9 @@ export const LinksContainer = styled.div`
 export const NewsFeedContainer = styled.div`
   display: flex;
   flex-direction: column;
-  gap: 20px;
+  gap: ${(props) => props.gap};
   width: 100%;
-  max-width: 600px;
+  max-width: ${(props) => props.maxWidth};
   height: 100%;
   margin-top: 24px;
 `;
@@ -452,7 +508,7 @@ export const PostContainer = styled.div`
   display: flex;
   flex-direction: column;
   width: 100%;
-  max-width: 575px;
+  max-width: ${(props) => props.maxWidth};
   height: 100%;
   background-color: #faf9f6;
   border-radius: 4px;
@@ -492,7 +548,7 @@ export const BlogNamePost = styled.div`
 
 export const MiddleContainerPost = styled.div`
   width: 100%;
-  max-width: 575px;
+  /* max-width: 575px; */
   height: 100%;
 `;
 export const MiddlePostTitleContainer = styled.div`
@@ -519,8 +575,8 @@ export const PostImageContainer = styled.div`
   margin-top: 4px;
 
   img {
-    width: 100%;
-    height: 100%;
+    width: ${(props) => props.width};
+    height: ${(props) => props.height};
     max-height: 500px;
     object-fit: cover;
   }

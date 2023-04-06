@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 import {
   CountryDiv,
   FeedContainer,
-  FilterPostsContainer,
+  FilterPostsContainer as FilterPostsParent,
   FilterPostsTitleDiv,
   HotDiv,
   ImageContainer,
@@ -45,6 +45,9 @@ import {
   DownPostContainer,
   SideMenuParent,
   TopicsSubcategotyContainer,
+  FilterPostsContainer,
+  PostViewMenu,
+  FeedViewContainer,
 } from "./components";
 
 import { GiTronArrow } from "react-icons/gi";
@@ -60,6 +63,9 @@ import { FiMessageSquare } from "react-icons/fi";
 import { RiStackshareLine } from "react-icons/ri";
 import { AiOutlineSave } from "react-icons/ai";
 import { BsThreeDots } from "react-icons/bs";
+import { HiOutlineMenuAlt4 } from "react-icons/hi";
+import { TfiMenuAlt } from "react-icons/tfi";
+import { TfiLayoutMenuV } from "react-icons/tfi";
 
 import Fotor from "../../Assets/Fotor_AI.png";
 import congress from "../../Assets/congress.jpg";
@@ -75,6 +81,10 @@ export const LandingPage = () => {
   const [openPopular, setOpenPopular] = useState(true);
   const [openGaming, setOpenGaming] = useState(false);
   const [openSports, setOpenSports] = useState(false);
+
+  const [feedView, setFeedView] = useState(false);
+
+  const [classicView, setClassicView] = useState(false);
 
   function onClickPopular() {
     if (openPopular === false) {
@@ -103,6 +113,26 @@ export const LandingPage = () => {
       setOpenGaming(false);
     } else {
       setOpenSports(false);
+    }
+  }
+
+  function onClickMenuView() {
+    if (feedView === false) {
+      setFeedView(true);
+    } else {
+      setFeedView(false);
+    }
+  }
+
+  function onClickClassicView() {
+    if (classicView === false) {
+      setClassicView(true);
+    }
+  }
+
+  function onClickCardView() {
+    if (classicView === true) {
+      setClassicView(false);
     }
   }
 
@@ -149,32 +179,66 @@ export const LandingPage = () => {
             </ImageContainer>
           </TrendingSubjectsContainer>
         </TrendingTodayContainer>
-        <PopularContainer>
-          <LeftContainer>
-            <PostsContainer>
+        <PopularContainer
+          marginAuto={classicView ? "0" : "0 auto"}
+          maxWidth={classicView ? "100%" : "1300px"}
+        >
+          <LeftContainer
+            maxWidth={classicView ? "100%" : "600px"}
+            alignItems={classicView ? "" : "center"}
+          >
+            <PostsContainer
+              maxWidth={classicView ? "100%" : "600px"}
+              alignItems={classicView ? "flex-start" : "center"}
+            >
               <PopularPostsTitleDiv>
                 <h4>Popular posts</h4>
               </PopularPostsTitleDiv>
-              <FilterPostsContainer>
-                <HotDiv>
-                  <TbFlame />
-                  <span>Hot</span>
-                </HotDiv>
-                <CountryDiv>
-                  <span>Romania</span>
-                  <IoMdArrowDropdown />
-                </CountryDiv>
-                <NewPostsDiv>
-                  <MdNewReleases />
-                  <span>New</span>
-                </NewPostsDiv>
-                <TopPostsDiv>
-                  <BiBarChartAlt2 />
-                  <span>Top</span>
-                </TopPostsDiv>
-              </FilterPostsContainer>
+              <FilterPostsParent maxWidth={classicView ? "100%" : "600px"}>
+                <FilterPostsContainer>
+                  <HotDiv>
+                    <TbFlame />
+                    <span>Hot</span>
+                  </HotDiv>
+                  <CountryDiv>
+                    <span>Romania</span>
+                    <IoMdArrowDropdown />
+                  </CountryDiv>
+                  <NewPostsDiv>
+                    <MdNewReleases />
+                    <span>New</span>
+                  </NewPostsDiv>
+                  <TopPostsDiv>
+                    <BiBarChartAlt2 />
+                    <span>Top</span>
+                  </TopPostsDiv>
+                </FilterPostsContainer>
+                <PostViewMenu onClick={onClickMenuView}>
+                  <HiOutlineMenuAlt4 />
+                  <IoIosArrowDown />
+                  {feedView ? (
+                    <FeedViewContainer>
+                      <span onClick={onClickCardView}>
+                        <HiOutlineMenuAlt4 />
+                        Card
+                      </span>
+                      <span onClick={onClickClassicView}>
+                        <TfiMenuAlt />
+                        Classic
+                      </span>
+                      <span>
+                        <TfiLayoutMenuV />
+                        Compact
+                      </span>
+                    </FeedViewContainer>
+                  ) : null}
+                </PostViewMenu>
+              </FilterPostsParent>
             </PostsContainer>
-            <NewsFeedContainer>
+            <NewsFeedContainer
+              maxWidth={classicView ? "100%" : "600px"}
+              gap={classicView ? "0" : "20px"}
+            >
               <NewsFeedPost>
                 <PostLikesContainer>
                   <AiFillPlusCircle />
@@ -203,7 +267,12 @@ export const LandingPage = () => {
                       </h4>
                     </MiddlePostTitleContainer>
                     <PostImageContainer>
-                      <img src={Post1} alt="" />
+                      <img
+                        src={Post1}
+                        alt=""
+                        width={classicView ? "100px" : "100%"}
+                        height={classicView ? "80px" : "100%"}
+                      />
                     </PostImageContainer>
                   </MiddleContainerPost>
                   <DownPostContainer>
@@ -229,7 +298,7 @@ export const LandingPage = () => {
                   <span>365</span>
                   <AiFillMinusCircle />
                 </PostLikesContainer>
-                <PostContainer>
+                <PostContainer maxWidth={classicView ? "100%" : "575px"}>
                   <UpperPostContainer>
                     <UpperPostTextContainer>
                       <BlogNamePost>
@@ -252,7 +321,12 @@ export const LandingPage = () => {
                       </h4>
                     </MiddlePostTitleContainer>
                     <PostImageContainer>
-                      <img src={Post2} alt="" />
+                      <img
+                        src={Post2}
+                        alt=""
+                        width={classicView ? "100px" : "100%"}
+                        height={classicView ? "80px" : "100%"}
+                      />
                     </PostImageContainer>
                   </MiddleContainerPost>
                   <DownPostContainer>
@@ -299,7 +373,12 @@ export const LandingPage = () => {
                       </h4>
                     </MiddlePostTitleContainer>
                     <PostImageContainer>
-                      <img src={Post3} alt="" />
+                      <img
+                        src={Post3}
+                        alt=""
+                        width={classicView ? "100px" : "100%"}
+                        height={classicView ? "80px" : "100%"}
+                      />
                     </PostImageContainer>
                   </MiddleContainerPost>
                   <DownPostContainer>

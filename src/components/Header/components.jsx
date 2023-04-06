@@ -62,7 +62,8 @@ export const SecondHeaderLogo = styled.span`
 
 export const SearchContainer = styled.div`
   display: flex;
-  align-items: center;
+  flex-direction: column;
+  justify-content: center;
   width: 100%;
   border: 1px solid #ddd;
   padding: 0 8px;
@@ -95,6 +96,16 @@ export const SearchContainer = styled.div`
     }
   }
 `;
+
+export const SearchBarContainer = styled.div`
+  display: flex;
+  align-items: center;
+`;
+
+export const SearchBarResultsContainer = styled.div`
+  display: none;
+`;
+
 export const LoginContainer = styled.div`
   display: flex;
   justify-content: flex-end;

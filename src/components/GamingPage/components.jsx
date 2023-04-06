@@ -14,12 +14,11 @@ export const SideMenuParent = styled.div`
 
 export const GamingFeedContainer = styled.div`
   display: flex;
-  justify-content: center;
   align-items: flex-start;
   margin: 80px auto;
   /* margin-top: 80px; */
   width: 100%;
-  max-width: 950px;
+  max-width: ${(props) => props.maxWidth};
   gap: 20px;
   padding: 0 24px;
 `;
@@ -28,14 +27,15 @@ export const GamePostsContainer = styled.div`
   display: flex;
   flex-direction: column;
   width: 100%;
-  max-width: 640px;
-  gap: 20px;
+  max-width: ${(props) => props.classic};
+  gap: ${(props) => props.gap};
 `;
 
 export const GameTopicTitleContainer = styled.div`
   display: flex;
   flex-direction: column;
   gap: 8px;
+  padding-bottom: ${(props) => props.padding};
 
   h2 {
     font-size: 22px;
@@ -52,6 +52,7 @@ export const MenuSelectionsContainer = styled.div`
   display: flex;
   align-items: center;
   gap: 12px;
+  padding-bottom: ${(props) => props.padding};
 
   button {
     background: transparent;
@@ -80,6 +81,7 @@ export const PostsViewContainer = styled.div`
   background-color: #fff;
   height: 40px;
   padding: 4px;
+  margin-bottom: ${(props) => props.marginBottom};
   border-radius: 4px;
   span {
     padding-left: 8px;
@@ -147,13 +149,15 @@ export const FeedViewContainer = styled.div`
 export const UserPostContainer = styled.div`
   display: flex;
   background-color: #fff;
-  border-radius: 4px;
+  border-radius: ${(props) => props.borderRadius};
+  border-bottom: ${(props) => props.borderBottom};
 `;
 
 export const PostLikesContainer = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: ${(props) => props.justifyCenter};
   width: 100%;
   max-width: 25px;
   background-color: #faf9f6;
@@ -203,6 +207,7 @@ export const MiddlePostContainer = styled.div`
 
 export const MiddlePostTextContainer = styled.div`
   display: flex;
+  align-items: center;
   flex-wrap: wrap;
   padding: 0 2px 8px;
   h4 {
@@ -222,21 +227,14 @@ export const MiddlePostTextContainer = styled.div`
 `;
 
 export const PostTextContainer = styled.div`
-  display: flex;
+  display: ${(props) => props.display};
   padding: 4px 8px 4px 8px;
   /* min-height: 200px; */
 
   span {
-    /* width: 100%;
-    max-width: 590px;
-    height: 100%;
-    max-height: 300px; */
     font-size: 14px;
     font-weight: 500;
     color: #878a8c;
-    /* white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis; */
   }
 `;
 

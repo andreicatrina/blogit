@@ -58,6 +58,7 @@ import { RiSearchLine } from "react-icons/ri";
 
 export function GamingPage() {
   const [feedView, setFeedView] = useState(false);
+  const [classicView, setClassicView] = useState(false);
 
   function onClickFeedView() {
     if (feedView === false) {
@@ -67,24 +68,39 @@ export function GamingPage() {
     }
   }
 
+  function onClickClassicView() {
+    if (classicView === false) {
+      setClassicView(true);
+    }
+  }
+
+  function onClickCardView() {
+    if (classicView === true) {
+      setClassicView(false);
+    }
+  }
+
   return (
     <PageLayout>
       <GamingLandingPage>
         <SideMenuParent>
           <SideMenu />
         </SideMenuParent>
-        <GamingFeedContainer>
-          <GamePostsContainer>
-            <GameTopicTitleContainer>
+        <GamingFeedContainer maxWidth={classicView ? "100%" : "950px"}>
+          <GamePostsContainer
+            classic={classicView ? "100%" : "640px"}
+            gap={classicView ? "0" : "20px"}
+          >
+            <GameTopicTitleContainer padding={classicView ? "20px" : "0"}>
               <h2>Gaming</h2>
               <span>Topic on BlogIt</span>
             </GameTopicTitleContainer>
-            <MenuSelectionsContainer>
+            <MenuSelectionsContainer padding={classicView ? "20px" : "0"}>
               <button>Posts</button>
               <button>Communities</button>
               <button>Related Topics</button>
             </MenuSelectionsContainer>
-            <PostsViewContainer>
+            <PostsViewContainer marginBottom={classicView ? "20px" : "0"}>
               <span>Posts about Gaming</span>
               <SelectViewDiv onClick={onClickFeedView}>
                 <SelectedViewDiv>
@@ -93,11 +109,11 @@ export function GamingPage() {
                 </SelectedViewDiv>
                 {feedView ? (
                   <FeedViewContainer>
-                    <span>
+                    <span onClick={onClickCardView}>
                       <HiOutlineMenuAlt4 />
                       Card
                     </span>
-                    <span>
+                    <span onClick={onClickClassicView}>
                       <TfiMenuAlt />
                       Classic
                     </span>
@@ -109,8 +125,13 @@ export function GamingPage() {
                 ) : null}
               </SelectViewDiv>
             </PostsViewContainer>
-            <UserPostContainer>
-              <PostLikesContainer>
+            <UserPostContainer
+              borderRadius={classicView ? "0" : "4px"}
+              borderBottom={classicView ? "1px solid #cfd0d1" : "none"}
+            >
+              <PostLikesContainer
+                justifyCenter={classicView ? "center" : "flex-start"}
+              >
                 <AiFillPlusCircle />
                 <span>2.4k</span>
                 <AiFillMinusCircle />
@@ -134,7 +155,7 @@ export function GamingPage() {
                     </h4>
                     <span>Hobby History (Medium)</span>
                   </MiddlePostTextContainer>
-                  <PostTextContainer>
+                  <PostTextContainer display={classicView ? "none" : "flex"}>
                     <span>
                       Introduction <br /> wars have always been a part of video
                       games, going all the way back to the 90s with the feud
@@ -179,8 +200,12 @@ export function GamingPage() {
                 </DownPostContainer>
               </PostContainer>
             </UserPostContainer>
-            <UserPostContainer>
-              <PostLikesContainer>
+            <UserPostContainer
+              borderBottom={classicView ? "1px solid #cfd0d1" : "none"}
+            >
+              <PostLikesContainer
+                justifyCenter={classicView ? "center" : "flex-start"}
+              >
                 <AiFillPlusCircle />
                 <span>1.9k</span>
                 <AiFillMinusCircle />
@@ -203,7 +228,7 @@ export function GamingPage() {
                     </h4>
                     <span>CLOSED</span>
                   </MiddlePostTextContainer>
-                  <PostTextContainer>
+                  <PostTextContainer display={classicView ? "none" : "flex"}>
                     <span>
                       Introduction <br /> wars have always been a part of video
                       games, going all the way back to the 90s with the feud
@@ -250,8 +275,12 @@ export function GamingPage() {
                 </DownPostContainer>
               </PostContainer>
             </UserPostContainer>
-            <UserPostContainer>
-              <PostLikesContainer>
+            <UserPostContainer
+              borderBottom={classicView ? "1px solid #cfd0d1" : "none"}
+            >
+              <PostLikesContainer
+                justifyCenter={classicView ? "center" : "flex-start"}
+              >
                 <AiFillPlusCircle />
                 <span>196</span>
                 <AiFillMinusCircle />
@@ -274,7 +303,7 @@ export function GamingPage() {
                     </h4>
                     <span>gamedev/testing</span>
                   </MiddlePostTextContainer>
-                  <PostTextContainer>
+                  <PostTextContainer display={classicView ? "none" : "flex"}>
                     <span>
                       Introduction <br /> wars have always been a part of video
                       games, going all the way back to the 90s with the feud
