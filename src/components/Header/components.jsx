@@ -66,10 +66,14 @@ export const SearchContainer = styled.div`
   justify-content: center;
   width: 100%;
   border: 1px solid #ddd;
+  border-bottom: ${(props) => props.borderBottom};
   padding: 0 8px;
   border-radius: 20px;
-  margin: 0 8px;
+  border-bottom-left-radius: ${(props) => props.borderBottomLeft};
+  border-bottom-right-radius: ${(props) => props.borderBottomRight};
+  margin: 0 10px;
   background-color: #f6f7f8;
+  position: relative;
 
   :hover {
     border-color: var(--color-light-blue);
@@ -103,7 +107,66 @@ export const SearchBarContainer = styled.div`
 `;
 
 export const SearchBarResultsContainer = styled.div`
-  display: none;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  max-width: 508px;
+  position: absolute;
+  top: 43px;
+  left: 0;
+  padding: 8px 8px 8px 10px;
+  gap: 8px;
+  border-bottom-left-radius: 4px;
+  border-bottom-right-radius: 4px;
+  background-color: #fff;
+  -webkit-box-shadow: -1.5px 5px 6px -1px #454444;
+  -moz-box-shadow: -1.5px 5px 6px -1px #454444;
+  box-shadow: -1.5px 5px 6px -1px #454444;
+
+  h4 {
+    font-size: 10px;
+    font-weight: 600;
+    color: #7c7c7c;
+    padding: 8px 2px;
+  }
+`;
+
+export const SearchResultParent = styled.div`
+  display: flex;
+  flex-direction: column;
+  margin-top: 4px;
+  cursor: pointer;
+
+  :hover {
+    background-color: var(--color-light-gray);
+  }
+`;
+
+export const SearchResultContainer = styled.div`
+  display: flex;
+
+  p {
+    font-size: 14px;
+    font-weight: 600;
+  }
+
+  svg {
+    rotate: 280deg;
+    color: var(--color-orange);
+  }
+`;
+
+export const ShortDescription = styled.div`
+  display: flex;
+  align-items: center;
+  flex-wrap: nowrap;
+  font-size: 14px;
+  color: #7c7c7c;
+  padding: 4px 4px 4px 16px;
+
+  svg {
+    color: var(--color-light-blue);
+  }
 `;
 
 export const LoginContainer = styled.div`
