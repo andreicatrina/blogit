@@ -67,8 +67,6 @@ import { HiOutlineMenuAlt4 } from "react-icons/hi";
 import { TfiMenuAlt } from "react-icons/tfi";
 import { TfiLayoutMenuV } from "react-icons/tfi";
 
-import Fotor from "../../Assets/Fotor_AI.png";
-import congress from "../../Assets/congress.jpg";
 import football from "../../Assets/football.jpg";
 import politician from "../../Assets/politician.jpg";
 import stockMarket from "../../Assets/stockMarket.jpg";
@@ -76,6 +74,7 @@ import netflix from "../../Assets/netflix.jpg";
 import Post1 from "../../Assets/Post1.jpg";
 import Post2 from "../../Assets/Post2.jpg";
 import Post3 from "../../Assets/Post3.png";
+import { PageLayout } from "../PageLayout/PageLayout";
 
 export const LandingPage = () => {
   const [openPopular, setOpenPopular] = useState(true);
@@ -137,325 +136,315 @@ export const LandingPage = () => {
   }
 
   return (
-    <LandingPageSection>
-      <SideMenuParent>
-        <SideMenu />
-      </SideMenuParent>
-      <FeedContainer>
-        <TrendingTodayContainer>
-          <TrendingTodayTitleContainer>
-            <h4>Trending today</h4>
-          </TrendingTodayTitleContainer>
-          <TrendingSubjectsContainer>
-            <ImageContainer>
-              <img src={stockMarket} alt="" />
-              <ImageTitle>
-                Credit Suisse <br />
-                <ImageSpan>Credit Suisse now under 2 bucks premarket</ImageSpan>
-              </ImageTitle>
-            </ImageContainer>
-            <ImageContainer>
-              <img src={football} alt="" />
-              <ImageTitle>
-                Erling Haaland <br />
-                <ImageSpan>{`[L'equipe] Erling Haaland receives 10/10`}</ImageSpan>
-              </ImageTitle>
-            </ImageContainer>
-            <ImageContainer>
-              <img src={netflix} alt="" />
-              <ImageTitle>
-                Ted Lasso <br />
-                <ImageSpan>Can't even enjoy TV in peace now</ImageSpan>
-              </ImageTitle>
-            </ImageContainer>
-            <ImageContainer>
-              <img src={politician} alt="" />
-              <ImageTitle>
-                Ron DeSantis <br />
-                <ImageSpan>
-                  GOP senators push back on Desantis over Ukraine
-                </ImageSpan>
-              </ImageTitle>
-            </ImageContainer>
-          </TrendingSubjectsContainer>
-        </TrendingTodayContainer>
-        <PopularContainer
-          marginAuto={classicView ? "0" : "0 auto"}
-          maxWidth={classicView ? "100%" : "1300px"}
-        >
-          <LeftContainer
-            maxWidth={classicView ? "100%" : "600px"}
-            alignItems={classicView ? "" : "center"}
-          >
-            <PostsContainer
-              maxWidth={classicView ? "100%" : "600px"}
-              alignItems={classicView ? "flex-start" : "center"}
-            >
-              <PopularPostsTitleDiv>
-                <h4>Popular posts</h4>
-              </PopularPostsTitleDiv>
-              <FilterPostsParent maxWidth={classicView ? "100%" : "600px"}>
-                <FilterPostsContainer>
-                  <HotDiv>
-                    <TbFlame />
-                    <span>Hot</span>
-                  </HotDiv>
-                  <CountryDiv>
-                    <span>Romania</span>
-                    <IoMdArrowDropdown />
-                  </CountryDiv>
-                  <NewPostsDiv>
-                    <MdNewReleases />
-                    <span>New</span>
-                  </NewPostsDiv>
-                  <TopPostsDiv>
-                    <BiBarChartAlt2 />
-                    <span>Top</span>
-                  </TopPostsDiv>
-                </FilterPostsContainer>
-                <PostViewMenu onClick={onClickMenuView}>
-                  <HiOutlineMenuAlt4 />
-                  <IoIosArrowDown />
-                  {feedView ? (
-                    <FeedViewContainer>
-                      <span onClick={onClickCardView}>
-                        <HiOutlineMenuAlt4 />
-                        Card
-                      </span>
-                      <span onClick={onClickClassicView}>
-                        <TfiMenuAlt />
-                        Classic
+    <PageLayout>
+      <LandingPageSection>
+        <SideMenuParent>
+          <SideMenu />
+        </SideMenuParent>
+        <FeedContainer>
+          <TrendingTodayContainer>
+            <TrendingTodayTitleContainer>
+              <h4>Trending today</h4>
+            </TrendingTodayTitleContainer>
+            <TrendingSubjectsContainer>
+              <ImageContainer>
+                <img src={stockMarket} alt="" />
+                <ImageTitle>
+                  Credit Suisse <br />
+                  <ImageSpan>Credit Suisse now under 2 bucks premarket</ImageSpan>
+                </ImageTitle>
+              </ImageContainer>
+              <ImageContainer>
+                <img src={football} alt="" />
+                <ImageTitle>
+                  Erling Haaland <br />
+                  <ImageSpan>{`[L'equipe] Erling Haaland receives 10/10`}</ImageSpan>
+                </ImageTitle>
+              </ImageContainer>
+              <ImageContainer>
+                <img src={netflix} alt="" />
+                <ImageTitle>
+                  Ted Lasso <br />
+                  <ImageSpan>Can't even enjoy TV in peace now</ImageSpan>
+                </ImageTitle>
+              </ImageContainer>
+              <ImageContainer>
+                <img src={politician} alt="" />
+                <ImageTitle>
+                  Ron DeSantis <br />
+                  <ImageSpan>GOP senators push back on Desantis over Ukraine</ImageSpan>
+                </ImageTitle>
+              </ImageContainer>
+            </TrendingSubjectsContainer>
+          </TrendingTodayContainer>
+          <PopularContainer marginAuto={classicView ? "0" : "0 auto"} maxWidth={classicView ? "100%" : "1300px"}>
+            <LeftContainer maxWidth={classicView ? "100%" : "600px"} alignItems={classicView ? "" : "center"}>
+              <PostsContainer
+                maxWidth={classicView ? "100%" : "600px"}
+                alignItems={classicView ? "flex-start" : "center"}
+              >
+                <PopularPostsTitleDiv>
+                  <h4>Popular posts</h4>
+                </PopularPostsTitleDiv>
+                <FilterPostsParent maxWidth={classicView ? "100%" : "600px"}>
+                  <FilterPostsContainer>
+                    <HotDiv>
+                      <TbFlame />
+                      <span>Hot</span>
+                    </HotDiv>
+                    <CountryDiv>
+                      <span>Romania</span>
+                      <IoMdArrowDropdown />
+                    </CountryDiv>
+                    <NewPostsDiv>
+                      <MdNewReleases />
+                      <span>New</span>
+                    </NewPostsDiv>
+                    <TopPostsDiv>
+                      <BiBarChartAlt2 />
+                      <span>Top</span>
+                    </TopPostsDiv>
+                  </FilterPostsContainer>
+                  <PostViewMenu onClick={onClickMenuView}>
+                    <HiOutlineMenuAlt4 />
+                    <IoIosArrowDown />
+                    {feedView ? (
+                      <FeedViewContainer>
+                        <span onClick={onClickCardView}>
+                          <HiOutlineMenuAlt4 />
+                          Card
+                        </span>
+                        <span onClick={onClickClassicView}>
+                          <TfiMenuAlt />
+                          Classic
+                        </span>
+                        <span>
+                          <TfiLayoutMenuV />
+                          Compact
+                        </span>
+                      </FeedViewContainer>
+                    ) : null}
+                  </PostViewMenu>
+                </FilterPostsParent>
+              </PostsContainer>
+              <NewsFeedContainer maxWidth={classicView ? "100%" : "600px"} gap={classicView ? "0" : "20px"}>
+                <NewsFeedPost>
+                  <PostLikesContainer>
+                    <AiFillPlusCircle />
+                    <span>532</span>
+                    <AiFillMinusCircle />
+                  </PostLikesContainer>
+                  <PostContainer>
+                    <UpperPostContainer>
+                      <UpperPostTextContainer>
+                        <BlogNamePost>
+                          {`blog>europe •`}
+                          <span>
+                            Posted by {`u/SteO153`}
+                            <span> ~6h ago</span>
+                          </span>
+                        </BlogNamePost>
+                      </UpperPostTextContainer>
+                      <VisitPostButton>Visit</VisitPostButton>
+                    </UpperPostContainer>
+                    <MiddleContainerPost>
+                      <MiddlePostTitleContainer>
+                        <h4>
+                          Florence mayor Dario Nardella (R) stopping a climate activists spraying paint on Palazzo
+                          Vecchio
+                          <span>Picture</span>
+                        </h4>
+                      </MiddlePostTitleContainer>
+                      <PostImageContainer>
+                        <img
+                          src={Post1}
+                          alt=""
+                          width={classicView ? "100px" : "100%"}
+                          height={classicView ? "80px" : "100%"}
+                        />
+                      </PostImageContainer>
+                    </MiddleContainerPost>
+                    <DownPostContainer>
+                      <span>
+                        <FiMessageSquare />
+                        793 Comments
                       </span>
                       <span>
-                        <TfiLayoutMenuV />
-                        Compact
+                        <RiStackshareLine />
+                        Share
                       </span>
-                    </FeedViewContainer>
-                  ) : null}
-                </PostViewMenu>
-              </FilterPostsParent>
-            </PostsContainer>
-            <NewsFeedContainer
-              maxWidth={classicView ? "100%" : "600px"}
-              gap={classicView ? "0" : "20px"}
-            >
-              <NewsFeedPost>
-                <PostLikesContainer>
-                  <AiFillPlusCircle />
-                  <span>532</span>
-                  <AiFillMinusCircle />
-                </PostLikesContainer>
-                <PostContainer>
-                  <UpperPostContainer>
-                    <UpperPostTextContainer>
-                      <BlogNamePost>
-                        {`blog>europe •`}
-                        <span>
-                          Posted by {`u/SteO153`}
-                          <span> ~6h ago</span>
-                        </span>
-                      </BlogNamePost>
-                    </UpperPostTextContainer>
-                    <VisitPostButton>Visit</VisitPostButton>
-                  </UpperPostContainer>
-                  <MiddleContainerPost>
-                    <MiddlePostTitleContainer>
-                      <h4>
-                        Florence mayor Dario Nardella (R) stopping a climate
-                        activists spraying paint on Palazzo Vecchio
-                        <span>Picture</span>
-                      </h4>
-                    </MiddlePostTitleContainer>
-                    <PostImageContainer>
-                      <img
-                        src={Post1}
-                        alt=""
-                        width={classicView ? "100px" : "100%"}
-                        height={classicView ? "80px" : "100%"}
-                      />
-                    </PostImageContainer>
-                  </MiddleContainerPost>
-                  <DownPostContainer>
-                    <span>
-                      <FiMessageSquare />
-                      793 Comments
-                    </span>
-                    <span>
-                      <RiStackshareLine />
-                      Share
-                    </span>
-                    <span>
-                      <AiOutlineSave />
-                      Save
-                    </span>
-                    <BsThreeDots />
-                  </DownPostContainer>
-                </PostContainer>
-              </NewsFeedPost>
-              <NewsFeedPost>
-                <PostLikesContainer>
-                  <AiFillPlusCircle />
-                  <span>365</span>
-                  <AiFillMinusCircle />
-                </PostLikesContainer>
-                <PostContainer maxWidth={classicView ? "100%" : "575px"}>
-                  <UpperPostContainer>
-                    <UpperPostTextContainer>
-                      <BlogNamePost>
-                        {`blog>Romania •`}
-                        <span>
-                          Posted by {`u/RoeO153`}
-                          <span> ~2h ago</span>
-                        </span>
-                      </BlogNamePost>
-                    </UpperPostTextContainer>
-                    <VisitPostButton>Visit</VisitPostButton>
-                  </UpperPostContainer>
-                  <MiddleContainerPost>
-                    <MiddlePostTitleContainer>
-                      <h4>
-                        Care-i faza cu ceapa? Am fost azi in Carrefour, tot la
-                        6.49 era. Nu mai creste ceapa in solul romanesc? A ajuns
-                        sa coste 1kg de ceapa cat 1 litru de benzina.
-                        <span>Serios</span>
-                      </h4>
-                    </MiddlePostTitleContainer>
-                    <PostImageContainer>
-                      <img
-                        src={Post2}
-                        alt=""
-                        width={classicView ? "100px" : "100%"}
-                        height={classicView ? "80px" : "100%"}
-                      />
-                    </PostImageContainer>
-                  </MiddleContainerPost>
-                  <DownPostContainer>
-                    <span>
-                      <FiMessageSquare />
-                      793 Comments
-                    </span>
-                    <span>
-                      <RiStackshareLine />
-                      Share
-                    </span>
-                    <span>
-                      <AiOutlineSave />
-                      Save
-                    </span>
-                    <BsThreeDots />
-                  </DownPostContainer>
-                </PostContainer>
-              </NewsFeedPost>
-              <NewsFeedPost>
-                <PostLikesContainer>
-                  <AiFillPlusCircle />
-                  <span>260</span>
-                  <AiFillMinusCircle />
-                </PostLikesContainer>
-                <PostContainer>
-                  <UpperPostContainer>
-                    <UpperPostTextContainer>
-                      <BlogNamePost>
-                        {`blog>Romania •`}
-                        <span>
-                          Posted by {`u/slamdrunker`}
-                          <span> ~4h ago</span>
-                        </span>
-                      </BlogNamePost>
-                    </UpperPostTextContainer>
-                    <VisitPostButton>Visit</VisitPostButton>
-                  </UpperPostContainer>
-                  <MiddleContainerPost>
-                    <MiddlePostTitleContainer>
-                      <h4>
-                        Cand sinceritatea nu e un asset pentru angajator
-                        <span>Funny</span>
-                      </h4>
-                    </MiddlePostTitleContainer>
-                    <PostImageContainer>
-                      <img
-                        src={Post3}
-                        alt=""
-                        width={classicView ? "100px" : "100%"}
-                        height={classicView ? "80px" : "100%"}
-                      />
-                    </PostImageContainer>
-                  </MiddleContainerPost>
-                  <DownPostContainer>
-                    <span>
-                      <FiMessageSquare />
-                      32 Comments
-                    </span>
-                    <span>
-                      <RiStackshareLine />
-                      Share
-                    </span>
-                    <span>
-                      <AiOutlineSave />
-                      Save
-                    </span>
-                    <BsThreeDots />
-                  </DownPostContainer>
-                </PostContainer>
-              </NewsFeedPost>
-            </NewsFeedContainer>
-          </LeftContainer>
-          <PopularCommunitiesContainer>
-            <ShortcutLinksContainer>
-              <ShortcutLinksTitleContainer onClick={onClickPopular}>
-                <h4>POPULAR COMMUNITIES</h4>
-                <IoIosArrowDown />
-              </ShortcutLinksTitleContainer>
-              {openPopular ? (
-                <LinksContainer>
-                  <a href="">AskBlogIt</a>
-                  <a href="">NoStupidQuestions</a>
-                  <a href="">Minecraft</a>
-                  <a href="">AskMen</a>
-                  <a href="">ExplainLikeImFive</a>
-                </LinksContainer>
-              ) : null}
+                      <span>
+                        <AiOutlineSave />
+                        Save
+                      </span>
+                      <BsThreeDots />
+                    </DownPostContainer>
+                  </PostContainer>
+                </NewsFeedPost>
+                <NewsFeedPost>
+                  <PostLikesContainer>
+                    <AiFillPlusCircle />
+                    <span>365</span>
+                    <AiFillMinusCircle />
+                  </PostLikesContainer>
+                  <PostContainer maxWidth={classicView ? "100%" : "575px"}>
+                    <UpperPostContainer>
+                      <UpperPostTextContainer>
+                        <BlogNamePost>
+                          {`blog>Romania •`}
+                          <span>
+                            Posted by {`u/RoeO153`}
+                            <span> ~2h ago</span>
+                          </span>
+                        </BlogNamePost>
+                      </UpperPostTextContainer>
+                      <VisitPostButton>Visit</VisitPostButton>
+                    </UpperPostContainer>
+                    <MiddleContainerPost>
+                      <MiddlePostTitleContainer>
+                        <h4>
+                          Care-i faza cu ceapa? Am fost azi in Carrefour, tot la 6.49 era. Nu mai creste ceapa in solul
+                          romanesc? A ajuns sa coste 1kg de ceapa cat 1 litru de benzina.
+                          <span>Serios</span>
+                        </h4>
+                      </MiddlePostTitleContainer>
+                      <PostImageContainer>
+                        <img
+                          src={Post2}
+                          alt=""
+                          width={classicView ? "100px" : "100%"}
+                          height={classicView ? "80px" : "100%"}
+                        />
+                      </PostImageContainer>
+                    </MiddleContainerPost>
+                    <DownPostContainer>
+                      <span>
+                        <FiMessageSquare />
+                        793 Comments
+                      </span>
+                      <span>
+                        <RiStackshareLine />
+                        Share
+                      </span>
+                      <span>
+                        <AiOutlineSave />
+                        Save
+                      </span>
+                      <BsThreeDots />
+                    </DownPostContainer>
+                  </PostContainer>
+                </NewsFeedPost>
+                <NewsFeedPost>
+                  <PostLikesContainer>
+                    <AiFillPlusCircle />
+                    <span>260</span>
+                    <AiFillMinusCircle />
+                  </PostLikesContainer>
+                  <PostContainer>
+                    <UpperPostContainer>
+                      <UpperPostTextContainer>
+                        <BlogNamePost>
+                          {`blog>Romania •`}
+                          <span>
+                            Posted by {`u/slamdrunker`}
+                            <span> ~4h ago</span>
+                          </span>
+                        </BlogNamePost>
+                      </UpperPostTextContainer>
+                      <VisitPostButton>Visit</VisitPostButton>
+                    </UpperPostContainer>
+                    <MiddleContainerPost>
+                      <MiddlePostTitleContainer>
+                        <h4>
+                          Cand sinceritatea nu e un asset pentru angajator
+                          <span>Funny</span>
+                        </h4>
+                      </MiddlePostTitleContainer>
+                      <PostImageContainer>
+                        <img
+                          src={Post3}
+                          alt=""
+                          width={classicView ? "100px" : "100%"}
+                          height={classicView ? "80px" : "100%"}
+                        />
+                      </PostImageContainer>
+                    </MiddleContainerPost>
+                    <DownPostContainer>
+                      <span>
+                        <FiMessageSquare />
+                        32 Comments
+                      </span>
+                      <span>
+                        <RiStackshareLine />
+                        Share
+                      </span>
+                      <span>
+                        <AiOutlineSave />
+                        Save
+                      </span>
+                      <BsThreeDots />
+                    </DownPostContainer>
+                  </PostContainer>
+                </NewsFeedPost>
+              </NewsFeedContainer>
+            </LeftContainer>
+            <PopularCommunitiesContainer>
+              <ShortcutLinksContainer>
+                <ShortcutLinksTitleContainer onClick={onClickPopular}>
+                  <h4>POPULAR COMMUNITIES</h4>
+                  <IoIosArrowDown />
+                </ShortcutLinksTitleContainer>
+                {openPopular ? (
+                  <LinksContainer>
+                    <a href="">AskBlogIt</a>
+                    <a href="">NoStupidQuestions</a>
+                    <a href="">Minecraft</a>
+                    <a href="">AskMen</a>
+                    <a href="">ExplainLikeImFive</a>
+                  </LinksContainer>
+                ) : null}
 
-              <ShortcutLinksTitleContainer onClick={onClickGaming}>
-                <h4>Gaming</h4>
-                <IoIosArrowDown />
-              </ShortcutLinksTitleContainer>
-              {openGaming ? (
-                <LinksContainer>
-                  <a href="">StardewValley</a>
-                  <a href="">FortniteCompetitive</a>
-                  <a href="">Warframe</a>
-                  <a href="">totalwar</a>
-                  <a href="">Fallout</a>
-                  <a href="">RocketLeague</a>
-                  <a href="">yugioh</a>
-                  <a href="">fo76</a>
-                </LinksContainer>
-              ) : null}
+                <ShortcutLinksTitleContainer onClick={onClickGaming}>
+                  <h4>Gaming</h4>
+                  <IoIosArrowDown />
+                </ShortcutLinksTitleContainer>
+                {openGaming ? (
+                  <LinksContainer>
+                    <a href="">StardewValley</a>
+                    <a href="">FortniteCompetitive</a>
+                    <a href="">Warframe</a>
+                    <a href="">totalwar</a>
+                    <a href="">Fallout</a>
+                    <a href="">RocketLeague</a>
+                    <a href="">yugioh</a>
+                    <a href="">fo76</a>
+                  </LinksContainer>
+                ) : null}
 
-              <ShortcutLinksTitleContainer onClick={onClickSports}>
-                <h4>Sports</h4>
-                <IoIosArrowDown />
-              </ShortcutLinksTitleContainer>
-              {openSports ? (
-                <LinksContainer>
-                  <a href="">running</a>
-                  <a href="">soccer</a>
-                  <a href="">bjj</a>
-                  <a href="">MMA</a>
-                  <a href="">hockey</a>
-                  <a href="">formula1</a>
-                  <a href="">CFB</a>
-                  <a href="">MTB</a>
-                  <a href="">cycling</a>
-                  <a href="">rugbyunion</a>
-                </LinksContainer>
-              ) : null}
-            </ShortcutLinksContainer>
-          </PopularCommunitiesContainer>
-        </PopularContainer>
-      </FeedContainer>
-    </LandingPageSection>
+                <ShortcutLinksTitleContainer onClick={onClickSports}>
+                  <h4>Sports</h4>
+                  <IoIosArrowDown />
+                </ShortcutLinksTitleContainer>
+                {openSports ? (
+                  <LinksContainer>
+                    <a href="">running</a>
+                    <a href="">soccer</a>
+                    <a href="">bjj</a>
+                    <a href="">MMA</a>
+                    <a href="">hockey</a>
+                    <a href="">formula1</a>
+                    <a href="">CFB</a>
+                    <a href="">MTB</a>
+                    <a href="">cycling</a>
+                    <a href="">rugbyunion</a>
+                  </LinksContainer>
+                ) : null}
+              </ShortcutLinksContainer>
+            </PopularCommunitiesContainer>
+          </PopularContainer>
+        </FeedContainer>
+      </LandingPageSection>
+    </PageLayout>
   );
 };
 
@@ -685,4 +674,3 @@ export const SideMenu = () => {
     </SideMenuContainer>
   );
 };
-

@@ -74,8 +74,7 @@ export const SearchContainer = styled.div`
   margin: 0 10px;
   background-color: #f6f7f8;
   position: relative;
-
-  :hover {
+  pos :hover {
     border-color: var(--color-light-blue);
   }
 
@@ -109,11 +108,12 @@ export const SearchBarContainer = styled.div`
 export const SearchBarResultsContainer = styled.div`
   display: flex;
   flex-direction: column;
-  width: 100%;
+  /* width: 100%; */
   max-width: 508px;
   position: absolute;
   top: 43px;
   left: 0;
+  right: 0;
   padding: 8px 8px 8px 10px;
   gap: 8px;
   border-bottom-left-radius: 4px;

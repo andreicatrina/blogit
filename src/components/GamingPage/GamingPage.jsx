@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+
 import { SideMenu } from "../LandingPage/LandingPage";
 import { PageLayout } from "../PageLayout/PageLayout";
 import {
@@ -87,10 +88,7 @@ export function GamingPage() {
           <SideMenu />
         </SideMenuParent>
         <GamingFeedContainer maxWidth={classicView ? "100%" : "950px"}>
-          <GamePostsContainer
-            classic={classicView ? "100%" : "640px"}
-            gap={classicView ? "0" : "20px"}
-          >
+          <GamePostsContainer classic={classicView ? "100%" : "640px"} gap={classicView ? "0" : "20px"}>
             <GameTopicTitleContainer padding={classicView ? "20px" : "0"}>
               <h2>Gaming</h2>
               <span>Topic on BlogIt</span>
@@ -129,9 +127,7 @@ export function GamingPage() {
               borderRadius={classicView ? "0" : "4px"}
               borderBottom={classicView ? "1px solid #cfd0d1" : "none"}
             >
-              <PostLikesContainer
-                justifyCenter={classicView ? "center" : "flex-start"}
-              >
+              <PostLikesContainer justifyCenter={classicView ? "center" : "flex-start"}>
                 <AiFillPlusCircle />
                 <span>2.4k</span>
                 <AiFillMinusCircle />
@@ -149,37 +145,27 @@ export function GamingPage() {
                 <MiddlePostContainer>
                   <MiddlePostTextContainer>
                     <h4>
-                      [Video Games] The Xbox One: How Microsoft cost themselves
-                      an entire console generation with one bad announcement
-                      after another
+                      [Video Games] The Xbox One: How Microsoft cost themselves an entire console generation with one
+                      bad announcement after another
                     </h4>
                     <span>Hobby History (Medium)</span>
                   </MiddlePostTextContainer>
                   <PostTextContainer display={classicView ? "none" : "flex"}>
                     <span>
-                      Introduction <br /> wars have always been a part of video
-                      games, going all the way back to the 90s with the feud
-                      between Sega and Nintendo. It makes sense from a tribalism
-                      perspective; consoles are hefty purchases so you need to
-                      be able to feel secure that you bought the right one,
-                      especially if you're a child as you may not have the funds
-                      to secure the competition unless your parents were
-                      exceedingly generous. Today's post focuses on one such
-                      entry into the console war, and how focusing on the wrong
-                      aspects cost its parent company the entire generation in
-                      terms of PR and public image. This is the story of the
-                      Xbox One.
-                      <br /> The setup <br /> In 2000, Microsoft would enter the
-                      console market race with the original
-                      heavy-enough-to-be-a-murder-weapon Xbox. While it would
-                      fail to beat its primary competition, Sony's Playstation
-                      2, it would carve out a niche for itself in the Americas,
-                      helped by several successful exclusives like Halo Combat
-                      Evolved and Halo 2, fantasy RPG Fable, and Star Wars:
-                      Knights of the Old Republic. Then again, going blow to
-                      blow with the PS2 is no small feat given it's the best
-                      selling console of all time as of writing at over a
-                      hundred and fifty five million units.
+                      Introduction <br /> wars have always been a part of video games, going all the way back to the 90s
+                      with the feud between Sega and Nintendo. It makes sense from a tribalism perspective; consoles are
+                      hefty purchases so you need to be able to feel secure that you bought the right one, especially if
+                      you're a child as you may not have the funds to secure the competition unless your parents were
+                      exceedingly generous. Today's post focuses on one such entry into the console war, and how
+                      focusing on the wrong aspects cost its parent company the entire generation in terms of PR and
+                      public image. This is the story of the Xbox One.
+                      <br /> The setup <br /> In 2000, Microsoft would enter the console market race with the original
+                      heavy-enough-to-be-a-murder-weapon Xbox. While it would fail to beat its primary competition,
+                      Sony's Playstation 2, it would carve out a niche for itself in the Americas, helped by several
+                      successful exclusives like Halo Combat Evolved and Halo 2, fantasy RPG Fable, and Star Wars:
+                      Knights of the Old Republic. Then again, going blow to blow with the PS2 is no small feat given
+                      it's the best selling console of all time as of writing at over a hundred and fifty five million
+                      units.
                     </span>
                   </PostTextContainer>
                 </MiddlePostContainer>
@@ -200,12 +186,8 @@ export function GamingPage() {
                 </DownPostContainer>
               </PostContainer>
             </UserPostContainer>
-            <UserPostContainer
-              borderBottom={classicView ? "1px solid #cfd0d1" : "none"}
-            >
-              <PostLikesContainer
-                justifyCenter={classicView ? "center" : "flex-start"}
-              >
+            <UserPostContainer borderBottom={classicView ? "1px solid #cfd0d1" : "none"}>
+              <PostLikesContainer justifyCenter={classicView ? "center" : "flex-start"}>
                 <AiFillPlusCircle />
                 <span>1.9k</span>
                 <AiFillMinusCircle />
@@ -222,39 +204,26 @@ export function GamingPage() {
                 </UpperPostContainer>
                 <MiddlePostContainer>
                   <MiddlePostTextContainer>
-                    <h4>
-                      [USA-TX] [H] New Holiday Consoles (Xbox Series X, Nintendo
-                      Switch OLED, PS5 Disc)[W]
-                    </h4>
+                    <h4>[USA-TX] [H] New Holiday Consoles (Xbox Series X, Nintendo Switch OLED, PS5 Disc)[W]</h4>
                     <span>CLOSED</span>
                   </MiddlePostTextContainer>
                   <PostTextContainer display={classicView ? "none" : "flex"}>
                     <span>
-                      Introduction <br /> wars have always been a part of video
-                      games, going all the way back to the 90s with the feud
-                      between Sega and Nintendo. It makes sense from a tribalism
-                      perspective; consoles are hefty purchases so you need to
-                      be able to feel secure that you bought the right one,
-                      especially if you're a child as you may not have the funds
-                      to secure the competition unless your parents were
-                      exceedingly generous. Today's post focuses on one such
-                      entry into the console war, and how focusing on the wrong
-                      aspects cost its parent company the entire generation in
-                      terms of PR and public image. This is the story of the
-                      Xbox One.
-                      <br /> The setup <br /> In 2000, Microsoft would enter the
-                      console market race with the original
-                      heavy-enough-to-be-a-murder-weapon Xbox. While it would
-                      fail to beat its primary competition, Sony's Playstation
-                      2, it would carve out a niche for itself in the Americas,
-                      helped by several successful exclusives like Halo Combat
-                      Evolved and Halo 2, fantasy RPG Fable, and Star Wars:
-                      Knights of the Old Republic. Then again, going blow to
-                      blow with the PS2 is no small feat given it's the best
-                      selling console of all time as of writing at over a
-                      hundred and fifty five million units. Lorem ipsum dolor
-                      sit amet consectetur adipisicing elit. Accusamus quos
-                      asperiores optio sit, numquam vero!
+                      Introduction <br /> wars have always been a part of video games, going all the way back to the 90s
+                      with the feud between Sega and Nintendo. It makes sense from a tribalism perspective; consoles are
+                      hefty purchases so you need to be able to feel secure that you bought the right one, especially if
+                      you're a child as you may not have the funds to secure the competition unless your parents were
+                      exceedingly generous. Today's post focuses on one such entry into the console war, and how
+                      focusing on the wrong aspects cost its parent company the entire generation in terms of PR and
+                      public image. This is the story of the Xbox One.
+                      <br /> The setup <br /> In 2000, Microsoft would enter the console market race with the original
+                      heavy-enough-to-be-a-murder-weapon Xbox. While it would fail to beat its primary competition,
+                      Sony's Playstation 2, it would carve out a niche for itself in the Americas, helped by several
+                      successful exclusives like Halo Combat Evolved and Halo 2, fantasy RPG Fable, and Star Wars:
+                      Knights of the Old Republic. Then again, going blow to blow with the PS2 is no small feat given
+                      it's the best selling console of all time as of writing at over a hundred and fifty five million
+                      units. Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusamus quos asperiores optio
+                      sit, numquam vero!
                     </span>
                   </PostTextContainer>
                 </MiddlePostContainer>
@@ -275,12 +244,8 @@ export function GamingPage() {
                 </DownPostContainer>
               </PostContainer>
             </UserPostContainer>
-            <UserPostContainer
-              borderBottom={classicView ? "1px solid #cfd0d1" : "none"}
-            >
-              <PostLikesContainer
-                justifyCenter={classicView ? "center" : "flex-start"}
-              >
+            <UserPostContainer borderBottom={classicView ? "1px solid #cfd0d1" : "none"}>
+              <PostLikesContainer justifyCenter={classicView ? "center" : "flex-start"}>
                 <AiFillPlusCircle />
                 <span>196</span>
                 <AiFillMinusCircle />
@@ -297,39 +262,26 @@ export function GamingPage() {
                 </UpperPostContainer>
                 <MiddlePostContainer>
                   <MiddlePostTextContainer>
-                    <h4>
-                      I've finallt decided to pursue my true passion in life:
-                      create/develop my own video games!
-                    </h4>
+                    <h4>I've finallt decided to pursue my true passion in life: create/develop my own video games!</h4>
                     <span>gamedev/testing</span>
                   </MiddlePostTextContainer>
                   <PostTextContainer display={classicView ? "none" : "flex"}>
                     <span>
-                      Introduction <br /> wars have always been a part of video
-                      games, going all the way back to the 90s with the feud
-                      between Sega and Nintendo. It makes sense from a tribalism
-                      perspective; consoles are hefty purchases so you need to
-                      be able to feel secure that you bought the right one,
-                      especially if you're a child as you may not have the funds
-                      to secure the competition unless your parents were
-                      exceedingly generous. Today's post focuses on one such
-                      entry into the console war, and how focusing on the wrong
-                      aspects cost its parent company the entire generation in
-                      terms of PR and public image. This is the story of the
-                      Xbox One.
-                      <br /> The setup <br /> In 2000, Microsoft would enter the
-                      console market race with the original
-                      heavy-enough-to-be-a-murder-weapon Xbox. While it would
-                      fail to beat its primary competition, Sony's Playstation
-                      2, it would carve out a niche for itself in the Americas,
-                      helped by several successful exclusives like Halo Combat
-                      Evolved and Halo 2, fantasy RPG Fable, and Star Wars:
-                      Knights of the Old Republic. Then again, going blow to
-                      blow with the PS2 is no small feat given it's the best
-                      selling console of all time as of writing at over a
-                      hundred and fifty five million units. Lorem ipsum dolor
-                      sit amet consectetur adipisicing elit. Accusamus quos
-                      asperiores optio sit, numquam vero!
+                      Introduction <br /> wars have always been a part of video games, going all the way back to the 90s
+                      with the feud between Sega and Nintendo. It makes sense from a tribalism perspective; consoles are
+                      hefty purchases so you need to be able to feel secure that you bought the right one, especially if
+                      you're a child as you may not have the funds to secure the competition unless your parents were
+                      exceedingly generous. Today's post focuses on one such entry into the console war, and how
+                      focusing on the wrong aspects cost its parent company the entire generation in terms of PR and
+                      public image. This is the story of the Xbox One.
+                      <br /> The setup <br /> In 2000, Microsoft would enter the console market race with the original
+                      heavy-enough-to-be-a-murder-weapon Xbox. While it would fail to beat its primary competition,
+                      Sony's Playstation 2, it would carve out a niche for itself in the Americas, helped by several
+                      successful exclusives like Halo Combat Evolved and Halo 2, fantasy RPG Fable, and Star Wars:
+                      Knights of the Old Republic. Then again, going blow to blow with the PS2 is no small feat given
+                      it's the best selling console of all time as of writing at over a hundred and fifty five million
+                      units. Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusamus quos asperiores optio
+                      sit, numquam vero!
                     </span>
                   </PostTextContainer>
                 </MiddlePostContainer>
