@@ -9,7 +9,7 @@ export const HeaderSection = styled.section`
   height: 64px;
   position: fixed;
   top: 0;
-  z-index: 10;
+  z-index: 12;
 `;
 
 export const HeaderContainer = styled.div`
@@ -18,7 +18,7 @@ export const HeaderContainer = styled.div`
   justify-content: center;
   /* margin: 0 auto; */
   width: 100%;
-  max-width: 1600px;
+  max-width: 1400px;
   padding: 4px 12px;
   background-color: white;
   position: fixed;

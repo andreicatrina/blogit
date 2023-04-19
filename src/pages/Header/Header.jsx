@@ -64,7 +64,8 @@ export const Header = () => {
                   <p>Abortion in Michigan</p>
                 </SearchResultContainer>
                 <ShortDescription>
-                  Michigan Governor Gretchen Whitmer signs bill repealing 1931 abortion ban
+                  Michigan Governor Gretchen Whitmer signs bill repealing 1931
+                  abortion ban
                   <BsLink45Deg />
                 </ShortDescription>
               </SearchResultParent>
@@ -74,7 +75,8 @@ export const Header = () => {
                   <p>Tiger Woods</p>
                 </SearchResultContainer>
                 <ShortDescription>
-                  Tiger Woods witdraws from Masters due to injury, organizers say | CNN
+                  Tiger Woods witdraws from Masters due to injury, organizers
+                  say | CNN
                   <BsLink45Deg />
                 </ShortDescription>
               </SearchResultParent>

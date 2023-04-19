@@ -4,6 +4,7 @@ export const LandingPageSection = styled.section`
   display: flex;
   width: 100%;
   min-height: 100vh;
+  position: relative;
 `;
 
 export const SideMenuParent = styled.div`

@@ -6,7 +6,6 @@ import {
   CountryDiv,
   FeedContainer,
   FilterPostsContainer as FilterPostsParent,
-  FilterPostsTitleDiv,
   HotDiv,
   ImageContainer,
   ImageSpan,
@@ -71,10 +70,11 @@ import football from "../../Assets/football.jpg";
 import politician from "../../Assets/politician.jpg";
 import stockMarket from "../../Assets/stockMarket.jpg";
 import netflix from "../../Assets/netflix.jpg";
-import Post1 from "../../Assets/Post1.jpg";
-import Post2 from "../../Assets/Post2.jpg";
-import Post3 from "../../Assets/Post3.png";
+
 import { PageLayout } from "../PageLayout/PageLayout";
+
+import { posts } from "../LandingPage/posts.js";
+import { Comments } from "../../components/Comments/Comments";
 
 export const LandingPage = () => {
   const [openPopular, setOpenPopular] = useState(true);
@@ -82,8 +82,11 @@ export const LandingPage = () => {
   const [openSports, setOpenSports] = useState(false);
 
   const [feedView, setFeedView] = useState(false);
+  const [openComments, setOpenComments] = useState(false);
 
   const [classicView, setClassicView] = useState(false);
+
+  const [landingPosts, setLandingPosts] = useState(posts);
 
   function onClickPopular() {
     if (openPopular === false) {
@@ -135,9 +138,18 @@ export const LandingPage = () => {
     }
   }
 
+  function onClickOpenComments() {
+    if (openComments === false) {
+      setOpenComments(true);
+    } else {
+      setOpenComments(false);
+    }
+  }
+
   return (
     <PageLayout>
       <LandingPageSection>
+        {openComments ? <Comments /> : null}
         <SideMenuParent>
           <SideMenu />
         </SideMenuParent>
@@ -151,7 +163,9 @@ export const LandingPage = () => {
                 <img src={stockMarket} alt="" />
                 <ImageTitle>
                   Credit Suisse <br />
-                  <ImageSpan>Credit Suisse now under 2 bucks premarket</ImageSpan>
+                  <ImageSpan>
+                    Credit Suisse now under 2 bucks premarket
+                  </ImageSpan>
                 </ImageTitle>
               </ImageContainer>
               <ImageContainer>
@@ -172,13 +186,21 @@ export const LandingPage = () => {
                 <img src={politician} alt="" />
                 <ImageTitle>
                   Ron DeSantis <br />
-                  <ImageSpan>GOP senators push back on Desantis over Ukraine</ImageSpan>
+                  <ImageSpan>
+                    GOP senators push back on Desantis over Ukraine
+                  </ImageSpan>
                 </ImageTitle>
               </ImageContainer>
             </TrendingSubjectsContainer>
           </TrendingTodayContainer>
-          <PopularContainer marginAuto={classicView ? "0" : "0 auto"} maxWidth={classicView ? "100%" : "1300px"}>
-            <LeftContainer maxWidth={classicView ? "100%" : "600px"} alignItems={classicView ? "" : "center"}>
+          <PopularContainer
+            marginAuto={classicView ? "0" : "0 auto"}
+            maxWidth={classicView ? "100%" : "1300px"}
+          >
+            <LeftContainer
+              maxWidth={classicView ? "100%" : "600px"}
+              alignItems={classicView ? "" : "center"}
+            >
               <PostsContainer
                 maxWidth={classicView ? "100%" : "600px"}
                 alignItems={classicView ? "flex-start" : "center"}
@@ -227,11 +249,14 @@ export const LandingPage = () => {
                   </PostViewMenu>
                 </FilterPostsParent>
               </PostsContainer>
-              <NewsFeedContainer maxWidth={classicView ? "100%" : "600px"} gap={classicView ? "0" : "20px"}>
+              <NewsFeedContainer
+                maxWidth={classicView ? "100%" : "600px"}
+                gap={classicView ? "0" : "20px"}
+              >
                 <NewsFeedPost>
                   <PostLikesContainer>
                     <AiFillPlusCircle />
-                    <span>532</span>
+                    <span>{landingPosts.post1.likes}</span>
                     <AiFillMinusCircle />
                   </PostLikesContainer>
                   <PostContainer>
@@ -241,7 +266,7 @@ export const LandingPage = () => {
                           {`blog>europe •`}
                           <span>
                             Posted by {`u/SteO153`}
-                            <span> ~6h ago</span>
+                            <span>{`~${landingPosts.post1.postTime}h ago`}</span>
                           </span>
                         </BlogNamePost>
                       </UpperPostTextContainer>
@@ -250,14 +275,13 @@ export const LandingPage = () => {
                     <MiddleContainerPost>
                       <MiddlePostTitleContainer>
                         <h4>
-                          Florence mayor Dario Nardella (R) stopping a climate activists spraying paint on Palazzo
-                          Vecchio
-                          <span>Picture</span>
+                          {landingPosts.post1.title}
+                          <span>{landingPosts.post1.postTag}</span>
                         </h4>
                       </MiddlePostTitleContainer>
                       <PostImageContainer>
                         <img
-                          src={Post1}
+                          src={landingPosts.post1.picture}
                           alt=""
                           width={classicView ? "100px" : "100%"}
                           height={classicView ? "80px" : "100%"}
@@ -265,9 +289,9 @@ export const LandingPage = () => {
                       </PostImageContainer>
                     </MiddleContainerPost>
                     <DownPostContainer>
-                      <span>
+                      <span onClick={onClickOpenComments}>
                         <FiMessageSquare />
-                        793 Comments
+                        {`${landingPosts.post1.comments} Comments`}
                       </span>
                       <span>
                         <RiStackshareLine />
@@ -284,7 +308,7 @@ export const LandingPage = () => {
                 <NewsFeedPost>
                   <PostLikesContainer>
                     <AiFillPlusCircle />
-                    <span>365</span>
+                    <span>{landingPosts.post2.likes}</span>
                     <AiFillMinusCircle />
                   </PostLikesContainer>
                   <PostContainer maxWidth={classicView ? "100%" : "575px"}>
@@ -294,7 +318,9 @@ export const LandingPage = () => {
                           {`blog>Romania •`}
                           <span>
                             Posted by {`u/RoeO153`}
-                            <span> ~2h ago</span>
+                            <span>
+                              {`~${landingPosts.post2.postTime}h ago`}
+                            </span>
                           </span>
                         </BlogNamePost>
                       </UpperPostTextContainer>
@@ -303,14 +329,13 @@ export const LandingPage = () => {
                     <MiddleContainerPost>
                       <MiddlePostTitleContainer>
                         <h4>
-                          Care-i faza cu ceapa? Am fost azi in Carrefour, tot la 6.49 era. Nu mai creste ceapa in solul
-                          romanesc? A ajuns sa coste 1kg de ceapa cat 1 litru de benzina.
-                          <span>Serios</span>
+                          {landingPosts.post2.title}
+                          <span>{landingPosts.post2.postTag}</span>
                         </h4>
                       </MiddlePostTitleContainer>
                       <PostImageContainer>
                         <img
-                          src={Post2}
+                          src={landingPosts.post2.picture}
                           alt=""
                           width={classicView ? "100px" : "100%"}
                           height={classicView ? "80px" : "100%"}
@@ -320,7 +345,7 @@ export const LandingPage = () => {
                     <DownPostContainer>
                       <span>
                         <FiMessageSquare />
-                        793 Comments
+                        {`${landingPosts.post2.comments} Comments`}
                       </span>
                       <span>
                         <RiStackshareLine />
@@ -337,7 +362,7 @@ export const LandingPage = () => {
                 <NewsFeedPost>
                   <PostLikesContainer>
                     <AiFillPlusCircle />
-                    <span>260</span>
+                    <span>{landingPosts.post3.likes}</span>
                     <AiFillMinusCircle />
                   </PostLikesContainer>
                   <PostContainer>
@@ -347,7 +372,10 @@ export const LandingPage = () => {
                           {`blog>Romania •`}
                           <span>
                             Posted by {`u/slamdrunker`}
-                            <span> ~4h ago</span>
+                            <span>
+                              {" "}
+                              {`~${landingPosts.post3.postTime}h ago`}
+                            </span>
                           </span>
                         </BlogNamePost>
                       </UpperPostTextContainer>
@@ -356,13 +384,13 @@ export const LandingPage = () => {
                     <MiddleContainerPost>
                       <MiddlePostTitleContainer>
                         <h4>
-                          Cand sinceritatea nu e un asset pentru angajator
-                          <span>Funny</span>
+                          {landingPosts.post3.title}
+                          <span>{landingPosts.post3.postTag}</span>
                         </h4>
                       </MiddlePostTitleContainer>
                       <PostImageContainer>
                         <img
-                          src={Post3}
+                          src={landingPosts.post3.picture}
                           alt=""
                           width={classicView ? "100px" : "100%"}
                           height={classicView ? "80px" : "100%"}
@@ -372,7 +400,7 @@ export const LandingPage = () => {
                     <DownPostContainer>
                       <span>
                         <FiMessageSquare />
-                        32 Comments
+                        {`${landingPosts.post3.comments} Comments`}
                       </span>
                       <span>
                         <RiStackshareLine />
