@@ -39,37 +39,29 @@ import { RiStackshareLine } from "react-icons/ri";
 import { AiOutlineSave } from "react-icons/ai";
 import { BsThreeDots } from "react-icons/bs";
 
-export const Comments = () => {
+export const Comments = (props) => {
   const [landingPosts, setLandingPosts] = useState(posts);
-  const [displayComments, setDisplayComments] = useState(false);
 
   const [getLorem, setGetLorem] = useState("");
-
-  function onClickDisplayComments() {
-    if (displayComments === false) {
-      setDisplayComments(true);
-    }
-  }
 
   useEffect(() => {
     getRandomText();
   }, []);
 
   async function getRandomText() {
-    const api =
-      "https://baconipsum.com/api/?type=meat-and-filler&paras=1&sentences=4&format=text";
+    const api = "https://baconipsum.com/api/?type=meat-and-filler&paras=1&sentences=4&format=text";
 
     try {
       let result = await axios.get(api);
-      setGetLorem(result);
-      console.log(getLorem);
+      setGetLorem(result.data);
+      console.log(result.data);
     } catch (error) {
       console.log(error);
     }
   }
 
   return (
-    <CommentsSection display={displayComments ? "none" : "flex"}>
+    <CommentsSection>
       <CommentsContainer>
         <CommentsHeaderContainer>
           <LikesContainer>
@@ -77,7 +69,11 @@ export const Comments = () => {
             <span>700</span>
             <FaArrowAltCircleDown />
           </LikesContainer>
-          <CloseContainer onClick={onClickDisplayComments}>
+          <CloseContainer
+            onClick={() => {
+              props.toggleComments();
+            }}
+          >
             <MdClose />
             <span>Close</span>
           </CloseContainer>
@@ -96,10 +92,7 @@ export const Comments = () => {
                 <span>3 hours ago</span>
               </UserDetailsContainer>
               <PostTitleContainer>
-                <h4>
-                  Florence mayor Dario Nardella (R) stopping a climate activist
-                  spraying paint on Plazzo Vecchio
-                </h4>
+                <h4>Florence mayor Dario Nardella (R) stopping a climate activist spraying paint on Plazzo Vecchio</h4>
               </PostTitleContainer>
               <ImagePostContainer>
                 <img src={landingPosts.post1.picture} alt="" />
@@ -123,11 +116,7 @@ export const Comments = () => {
               </SaveSharePostContainer>
               <UserCommentInputContainer>
                 <span>Comment as _AndreiOvidiu_</span>
-                <textarea
-                  placeholder="What are your thoughts?"
-                  rows="7"
-                  cols="50"
-                ></textarea>
+                <textarea placeholder="What are your thoughts?" rows="7" cols="50"></textarea>
                 <CommentButtonContainer>
                   <button>Comment</button>
                 </CommentButtonContainer>

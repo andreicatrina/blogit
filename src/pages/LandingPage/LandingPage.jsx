@@ -138,7 +138,7 @@ export const LandingPage = () => {
     }
   }
 
-  function onClickOpenComments() {
+  function toggleComments() {
     if (openComments === false) {
       setOpenComments(true);
     } else {
@@ -149,7 +149,7 @@ export const LandingPage = () => {
   return (
     <PageLayout>
       <LandingPageSection>
-        {openComments ? <Comments /> : null}
+        {openComments ? <Comments toggleComments={toggleComments} /> : null}
         <SideMenuParent>
           <SideMenu />
         </SideMenuParent>
@@ -163,9 +163,7 @@ export const LandingPage = () => {
                 <img src={stockMarket} alt="" />
                 <ImageTitle>
                   Credit Suisse <br />
-                  <ImageSpan>
-                    Credit Suisse now under 2 bucks premarket
-                  </ImageSpan>
+                  <ImageSpan>Credit Suisse now under 2 bucks premarket</ImageSpan>
                 </ImageTitle>
               </ImageContainer>
               <ImageContainer>
@@ -186,21 +184,13 @@ export const LandingPage = () => {
                 <img src={politician} alt="" />
                 <ImageTitle>
                   Ron DeSantis <br />
-                  <ImageSpan>
-                    GOP senators push back on Desantis over Ukraine
-                  </ImageSpan>
+                  <ImageSpan>GOP senators push back on Desantis over Ukraine</ImageSpan>
                 </ImageTitle>
               </ImageContainer>
             </TrendingSubjectsContainer>
           </TrendingTodayContainer>
-          <PopularContainer
-            marginAuto={classicView ? "0" : "0 auto"}
-            maxWidth={classicView ? "100%" : "1300px"}
-          >
-            <LeftContainer
-              maxWidth={classicView ? "100%" : "600px"}
-              alignItems={classicView ? "" : "center"}
-            >
+          <PopularContainer marginAuto={classicView ? "0" : "0 auto"} maxWidth={classicView ? "100%" : "1300px"}>
+            <LeftContainer maxWidth={classicView ? "100%" : "600px"} alignItems={classicView ? "" : "center"}>
               <PostsContainer
                 maxWidth={classicView ? "100%" : "600px"}
                 alignItems={classicView ? "flex-start" : "center"}
@@ -249,10 +239,7 @@ export const LandingPage = () => {
                   </PostViewMenu>
                 </FilterPostsParent>
               </PostsContainer>
-              <NewsFeedContainer
-                maxWidth={classicView ? "100%" : "600px"}
-                gap={classicView ? "0" : "20px"}
-              >
+              <NewsFeedContainer maxWidth={classicView ? "100%" : "600px"} gap={classicView ? "0" : "20px"}>
                 <NewsFeedPost>
                   <PostLikesContainer>
                     <AiFillPlusCircle />
@@ -289,7 +276,7 @@ export const LandingPage = () => {
                       </PostImageContainer>
                     </MiddleContainerPost>
                     <DownPostContainer>
-                      <span onClick={onClickOpenComments}>
+                      <span onClick={toggleComments}>
                         <FiMessageSquare />
                         {`${landingPosts.post1.comments} Comments`}
                       </span>
@@ -318,9 +305,7 @@ export const LandingPage = () => {
                           {`blog>Romania •`}
                           <span>
                             Posted by {`u/RoeO153`}
-                            <span>
-                              {`~${landingPosts.post2.postTime}h ago`}
-                            </span>
+                            <span>{`~${landingPosts.post2.postTime}h ago`}</span>
                           </span>
                         </BlogNamePost>
                       </UpperPostTextContainer>
@@ -372,10 +357,7 @@ export const LandingPage = () => {
                           {`blog>Romania •`}
                           <span>
                             Posted by {`u/slamdrunker`}
-                            <span>
-                              {" "}
-                              {`~${landingPosts.post3.postTime}h ago`}
-                            </span>
+                            <span> {`~${landingPosts.post3.postTime}h ago`}</span>
                           </span>
                         </BlogNamePost>
                       </UpperPostTextContainer>

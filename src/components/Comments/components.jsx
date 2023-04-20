@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 export const CommentsSection = styled.div`
-  display: ${(props) => props.display};
+  display: flex;
   justify-content: center;
   min-width: 100vw;
   min-height: 100vh;
