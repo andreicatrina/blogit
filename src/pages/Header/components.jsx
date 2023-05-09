@@ -175,6 +175,7 @@ export const LoginContainer = styled.div`
   align-items: center;
   width: 100%;
   padding: 0 8px;
+  position: relative;
 `;
 
 export const LoginButton = styled.button`

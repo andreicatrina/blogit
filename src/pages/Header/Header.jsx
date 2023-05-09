@@ -22,15 +22,25 @@ import { GiVitruvianMan } from "react-icons/gi";
 import { TbListSearch } from "react-icons/tb";
 import { GiTronArrow } from "react-icons/gi";
 import { BsLink45Deg } from "react-icons/bs";
+import { LogIn } from "../../components/LogIn/LogIn";
 
 export const Header = () => {
   const [showSearch, setShowSearch] = useState(false);
+  const [openLogin, setOpenLogin] = useState(false);
 
   function onClickShowSearch() {
     if (showSearch === false) {
       setShowSearch(true);
     } else {
       setShowSearch(false);
+    }
+  }
+
+  function onClickOpenLogin() {
+    if (openLogin === false) {
+      setOpenLogin(true);
+    } else {
+      setOpenLogin(false);
     }
   }
 
@@ -53,7 +63,7 @@ export const Header = () => {
         >
           <SearchBarContainer>
             <TbListSearch />
-            <input type="text" placeholder="Search blogIt" />
+            <input type="search" placeholder="Search blogIt" />
           </SearchBarContainer>
           {showSearch ? (
             <SearchBarResultsContainer>
@@ -84,12 +94,13 @@ export const Header = () => {
           ) : null}
         </SearchContainer>
         <LoginContainer>
-          <LoginButton>
+          <LoginButton onClick={onClickOpenLogin}>
             <GiVitruvianMan />
             Log In
           </LoginButton>
         </LoginContainer>
       </HeaderContainer>
+      {openLogin ? <LogIn /> : null}
     </HeaderSection>
   );
 };
