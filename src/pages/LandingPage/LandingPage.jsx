@@ -47,6 +47,7 @@ import {
   FilterPostsContainer,
   PostViewMenu,
   FeedViewContainer,
+  CountryDropDownContainer,
 } from "./components";
 
 import { GiTronArrow } from "react-icons/gi";
@@ -163,7 +164,9 @@ export const LandingPage = () => {
                 <img src={stockMarket} alt="" />
                 <ImageTitle>
                   Credit Suisse <br />
-                  <ImageSpan>Credit Suisse now under 2 bucks premarket</ImageSpan>
+                  <ImageSpan>
+                    Credit Suisse now under 2 bucks premarket
+                  </ImageSpan>
                 </ImageTitle>
               </ImageContainer>
               <ImageContainer>
@@ -184,13 +187,21 @@ export const LandingPage = () => {
                 <img src={politician} alt="" />
                 <ImageTitle>
                   Ron DeSantis <br />
-                  <ImageSpan>GOP senators push back on Desantis over Ukraine</ImageSpan>
+                  <ImageSpan>
+                    GOP senators push back on Desantis over Ukraine
+                  </ImageSpan>
                 </ImageTitle>
               </ImageContainer>
             </TrendingSubjectsContainer>
           </TrendingTodayContainer>
-          <PopularContainer marginAuto={classicView ? "0" : "0 auto"} maxWidth={classicView ? "100%" : "1300px"}>
-            <LeftContainer maxWidth={classicView ? "100%" : "600px"} alignItems={classicView ? "" : "center"}>
+          <PopularContainer
+            marginAuto={classicView ? "0" : "0 auto"}
+            maxWidth={classicView ? "100%" : "1300px"}
+          >
+            <LeftContainer
+              maxWidth={classicView ? "100%" : "600px"}
+              alignItems={classicView ? "" : "center"}
+            >
               <PostsContainer
                 maxWidth={classicView ? "100%" : "600px"}
                 alignItems={classicView ? "flex-start" : "center"}
@@ -205,8 +216,8 @@ export const LandingPage = () => {
                       <span>Hot</span>
                     </HotDiv>
                     <CountryDiv>
-                      <span>Romania</span>
-                      <IoMdArrowDropdown />
+                      <option>International</option>
+                      <option>Romania</option>
                     </CountryDiv>
                     <NewPostsDiv>
                       <MdNewReleases />
@@ -239,7 +250,10 @@ export const LandingPage = () => {
                   </PostViewMenu>
                 </FilterPostsParent>
               </PostsContainer>
-              <NewsFeedContainer maxWidth={classicView ? "100%" : "600px"} gap={classicView ? "0" : "20px"}>
+              <NewsFeedContainer
+                maxWidth={classicView ? "100%" : "600px"}
+                gap={classicView ? "0" : "20px"}
+              >
                 <NewsFeedPost>
                   <PostLikesContainer>
                     <AiFillPlusCircle />
@@ -357,7 +371,10 @@ export const LandingPage = () => {
                           {`blog>Romania •`}
                           <span>
                             Posted by {`u/slamdrunker`}
-                            <span> {`~${landingPosts.post3.postTime}h ago`}</span>
+                            <span>
+                              {" "}
+                              {`~${landingPosts.post3.postTime}h ago`}
+                            </span>
                           </span>
                         </BlogNamePost>
                       </UpperPostTextContainer>

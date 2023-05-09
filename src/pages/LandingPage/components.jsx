@@ -239,7 +239,6 @@ export const FilterPostsContainer = styled.div`
   display: flex;
   align-items: center;
   width: 100%;
-  max-width: ${(props) => props.maxWidth};
   height: 60px;
   border-radius: 4px;
   gap: 12px;
@@ -329,33 +328,32 @@ export const HotDiv = styled.div`
     background-color: var(--color-gray);
   }
 `;
-export const CountryDiv = styled.div`
+export const CountryDiv = styled.select`
   display: flex;
   align-items: center;
   justify-content: center;
   width: 100%;
-  max-width: 100px;
+  max-width: 140px;
   height: 32px;
+  padding: 0 10px;
   background-color: var(--color-light-gray);
-  gap: 2px;
+  color: var(--color-light-blue);
+  font-size: 14px;
+  font-weight: 700;
   border-radius: 16px;
+  border: none;
   transition: 0.6s;
   cursor: pointer;
 
-  span {
+  option {
     font-size: 14px;
     font-weight: 700;
     color: var(--color-light-blue);
-  }
-
-  svg {
-    width: 20px;
-    height: 20px;
-    color: var(--color-light-blue);
+    padding: 6px;
   }
 
   :hover {
-    background-color: var(--color-gray);
+    /* background-color: var(--color-gray); */
   }
 `;
 export const NewPostsDiv = styled.div`
@@ -620,3 +618,4 @@ export const TopicsSubcategotyContainer = styled.div`
     }
   }
 `;
+
