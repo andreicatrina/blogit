@@ -40,6 +40,7 @@ export const CommentsHeaderContainer = styled.div`
 export const CloseContainer = styled.div`
   display: flex;
   align-items: center;
+  cursor: pointer;
 
   span {
     font-size: 12px;
@@ -72,6 +73,7 @@ export const LikesContainer = styled.div`
     width: 24px;
     height: 24px;
     color: #878a8c;
+    cursor: pointer;
   }
 `;
 
@@ -93,7 +95,7 @@ export const CommentsLeftContainer = styled.div`
 export const CommentsRightContainer = styled.div`
   width: 100%;
   max-width: 300px;
-  background-color: #fff;
+  background-color: transparent;
 `;
 
 export const UserDetailsContainer = styled.div`
@@ -251,6 +253,7 @@ export const CommentReplyContainer = styled.div`
     display: flex;
     align-items: center;
     gap: 4px;
+    cursor: pointer;
   }
 `;
 
@@ -263,11 +266,138 @@ export const CommentLikes = styled.div`
   span {
     font-size: 12px;
     font-weight: 700;
+    cursor: default;
   }
 
   svg {
     width: 24px;
     height: 24px;
     color: var(--color-orange);
+    cursor: pointer;
+  }
+`;
+
+export const ColorBar = styled.div`
+  width: 100%;
+  height: 28px;
+  background-color: #0079d3;
+`;
+
+export const BlogInfoContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  padding: 8px;
+  background-color: white;
+  border-radius: 4px;
+  margin-bottom: 16px;
+
+  span {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    font-size: 16px;
+    font-weight: 600;
+    svg {
+      width: 48px;
+      height: 48px;
+      border-radius: 50%;
+      border: 1px solid aquamarine;
+      background-color: aquamarine;
+      color: blueviolet;
+    }
+  }
+`;
+
+export const DescriptionParagraph = styled.p`
+  padding: 8px 0;
+  font-size: 14px;
+  font-weight: 400;
+`;
+
+export const BlogCreationDateParagraph = styled.p`
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  padding: 4px 0 16px 0;
+  border-bottom: 1px solid #7c7c7c;
+
+  svg {
+    width: 20px;
+    height: 20px;
+  }
+`;
+
+export const BlogStatsContainer = styled.div`
+  display: flex;
+  justify-content: space-between;
+  padding-top: 8px;
+
+  p {
+    font-size: 16px;
+    font-weight: 600;
+    color: black;
+    span {
+      font-size: 12px;
+      color: #7c7c7c;
+    }
+  }
+`;
+
+export const BlogEssentialsContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  padding: 8px;
+  background-color: white;
+  border-radius: 4px;
+  margin-bottom: 16px;
+
+  h3 {
+    font-size: 14px;
+    padding-bottom: 24px;
+  }
+`;
+
+export const EssentialsButtonsContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  gap: 8px;
+
+  button {
+    width: 100%;
+    height: 32px;
+    background-color: transparent;
+    border-radius: 16px;
+    border: 1px solid #0079d3;
+    color: #0079d3;
+    font-weight: 600;
+    font-size: 14px;
+    cursor: pointer;
+
+    :hover {
+      background-color: #f2f8fc;
+    }
+  }
+`;
+
+export const BlogRulesContainer = styled.div`
+  background-color: white;
+  padding: 8px;
+  border-radius: 4px;
+
+  h3 {
+    padding-bottom: 24px;
+    font-size: 14px;
+  }
+`;
+
+export const RulesContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+
+  span {
+    font-size: 14px;
+    font-weight: 400;
   }
 `;
