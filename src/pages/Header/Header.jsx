@@ -23,6 +23,7 @@ import { TbListSearch } from "react-icons/tb";
 import { GiTronArrow } from "react-icons/gi";
 import { BsLink45Deg } from "react-icons/bs";
 import { LogIn } from "../../components/LogIn/LogIn";
+import { SignUp } from "../../components/SignUp/SignUp";
 
 export const Header = () => {
   const [showSearch, setShowSearch] = useState(false);
@@ -96,11 +97,11 @@ export const Header = () => {
         <LoginContainer>
           <LoginButton onClick={onClickOpenLogin}>
             <GiVitruvianMan />
-            Log In
+            Connect
           </LoginButton>
         </LoginContainer>
       </HeaderContainer>
-      {openLogin ? <LogIn /> : null}
+      {openLogin ? <SignUp /> : null}
     </HeaderSection>
   );
 };

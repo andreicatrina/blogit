@@ -1,12 +1,17 @@
 import styled from "styled-components";
 
-export const LoginContainer = styled.div`
+export const SignUpContainer = styled.div`
   display: flex;
-  flex-direction: column;
   justify-content: center;
-  align-items: center;
-  /* width: 100%; */
-  gap: 24px;
+  width: 100%;
+  min-height: 100vh;
+  position: absolute;
+  top: 60px;
+  gap: 40px;
+  background: rgba(204, 195, 195, 0.5);
+  -webkit-backdrop-filter: blur(21px);
+  backdrop-filter: blur(21px);
+  border: 1px solid rgba(204, 195, 195, 0.25);
 
   h2 {
     display: flex;
@@ -36,26 +41,25 @@ export const LoginContainer = styled.div`
   }
 `;
 
-export const LoginInputsContainer = styled.div`
+export const SignUpInputsContainer = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: space-between;
   width: 100%;
   max-width: 360px;
-  height: 100%;
-  max-height: 476px;
+  height: 480px;
   padding: 12px;
   border-radius: 12px;
   background-color: white;
-  animation: fadeIn 5s;
 
   h3 {
     font-size: 20px;
+    padding: 12px 0;
   }
 `;
 
-export const LoginCloseContainer = styled.div`
+export const SignUpCloseContainer = styled.div`
   display: flex;
   justify-content: flex-end;
   width: 100%;
@@ -94,7 +98,7 @@ export const CredentialsContainer = styled.form`
     width: 100%;
     max-width: 210px;
     height: 40px;
-    margin-bottom: 24px;
+    margin-bottom: 12px;
     border-radius: 6px;
     font-family: "Noto Sans", sans-serif;
     font-size: 16px;
@@ -118,20 +122,19 @@ export const CredentialsContainer = styled.form`
   }
 `;
 
-export const LoginParent = styled.div`
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  gap: 24px;
-  width: 100%;
-  height: 100%;
+export const SuccessParagraph = styled.p`
+  color: green;
 `;
 
 export const ErrorParagraph = styled.p`
   color: var(--color-orange);
 `;
 
-export const SuccessParagraph = styled.p`
-  color: green;
+export const UserConnectContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: ${(props) => props.alignItems};
+  gap: 24px;
+  /* width: 100%; */
 `;
