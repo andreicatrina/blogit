@@ -5,6 +5,8 @@ import {
   getAuth,
   createUserWithEmailAndPassword,
   signInWithEmailAndPassword,
+  FacebookAuthProvider,
+  signInWithPopup,
 } from "firebase/auth";
 // TODO: Add SDKs for Firebase products that you want to use
 // https://firebase.google.com/docs/web/setup#available-libraries
@@ -40,3 +42,17 @@ export const signInUserWithEmailAndPassword = async (email, password) => {
   return signInWithEmailAndPassword(authService, email, password);
 };
 
+export const signInWithFacebook = async () => {
+  const authService = getAuth();
+  const provider = new FacebookAuthProvider();
+  const credential = await signInWithPopup(authService, provider);
+
+  return {
+    id: credential.user.uid,
+    displayName: credential.user.displayName,
+    phoneNumber: credential.user.phoneNumber,
+    email: credential.user.email,
+    photoURL: credential.user.photoURL,
+    emailVerified: credential.user.emailVerified,
+  };
+};

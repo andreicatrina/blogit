@@ -2,14 +2,24 @@ import React, { useState, useHistory } from "react";
 import {
   CredentialsContainer,
   ErrorParagraph,
+  FacebookButton,
+  GoogleButton,
   LoginCloseContainer,
   LoginContainer,
   LoginInputsContainer,
+  SocialMediaButtonsContainer,
   SuccessParagraph,
+  TwitterButton,
 } from "./components";
 
 import { IoMdClose } from "react-icons/io";
-import { signInUserWithEmailAndPassword } from "../../utils/firebase";
+import { BsFacebook } from "react-icons/bs";
+import { FcGoogle } from "react-icons/fc";
+import { BsTwitter } from "react-icons/bs";
+import {
+  signInUserWithEmailAndPassword,
+  signInWithFacebook,
+} from "../../utils/firebase";
 
 export const LogIn = () => {
   const [email, setEmail] = useState("");
@@ -48,6 +58,11 @@ export const LogIn = () => {
     }
   };
 
+  const onclickSignInFacebook = async () => {
+    const result = await signInWithFacebook();
+    console.log(result);
+  };
+
   return (
     <LoginContainer>
       <h2>
@@ -58,6 +73,17 @@ export const LogIn = () => {
           <IoMdClose />
         </LoginCloseContainer>
         <h3>Connect</h3>
+        <SocialMediaButtonsContainer>
+          <FacebookButton onClick={onclickSignInFacebook}>
+            <BsFacebook />
+          </FacebookButton>
+          <GoogleButton>
+            <FcGoogle />
+          </GoogleButton>
+          <TwitterButton>
+            <BsTwitter />
+          </TwitterButton>
+        </SocialMediaButtonsContainer>
         <CredentialsContainer onSubmit={onLoginSubmit}>
           <input type="email" placeholder="Email" onChange={onEmailChange} />
           <input

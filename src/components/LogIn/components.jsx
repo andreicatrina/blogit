@@ -135,3 +135,46 @@ export const ErrorParagraph = styled.p`
 export const SuccessParagraph = styled.p`
   color: green;
 `;
+
+export const SocialMediaButtonsContainer = styled.div`
+  display: flex;
+  gap: 16px;
+
+  a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: transparent;
+    padding: 2px 6px;
+    border: 1px solid var(--color-light-gray);
+    transition: 0.6s;
+    cursor: pointer;
+
+    :hover {
+      transform: scale(1.4);
+    }
+  }
+`;
+
+export const FacebookButton = styled.a`
+  color: #1877f2;
+
+  svg {
+    width: 24px;
+    height: 24px;
+  }
+`;
+export const GoogleButton = styled.a`
+  svg {
+    width: 24px;
+    height: 24px;
+  }
+`;
+export const TwitterButton = styled.a`
+  color: #1da1f2;
+
+  svg {
+    width: 24px;
+    height: 24px;
+  }
+`;
