@@ -170,9 +170,7 @@ export const GoogleButton = styled.a`
     height: 24px;
   }
 `;
-export const TwitterButton = styled.a`
-  color: #1da1f2;
-
+export const GithubButton = styled.a`
   svg {
     width: 24px;
     height: 24px;

@@ -8,7 +8,7 @@ import {
   FacebookAuthProvider,
   signInWithPopup,
   GoogleAuthProvider,
-  TwitterAuthProvider,
+  GithubAuthProvider,
 } from "firebase/auth";
 // TODO: Add SDKs for Firebase products that you want to use
 // https://firebase.google.com/docs/web/setup#available-libraries
@@ -74,3 +74,17 @@ export const signInUserWithGoogle = async () => {
   };
 };
 
+export const signInWithGithub = async () => {
+  const authService = getAuth();
+  const provider = new GithubAuthProvider();
+  const credential = await signInWithPopup(authService, provider);
+
+  return {
+    id: credential.user.uid,
+    displayName: credential.user.displayName,
+    phoneNumber: credential.user.phoneNumber,
+    email: credential.user.email,
+    photoURL: credential.user.photoURL,
+    emailVerified: credential.user.emailVerified,
+  };
+};

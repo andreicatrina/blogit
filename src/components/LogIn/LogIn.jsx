@@ -9,17 +9,18 @@ import {
   LoginInputsContainer,
   SocialMediaButtonsContainer,
   SuccessParagraph,
-  TwitterButton,
+  GithubButton,
 } from "./components";
 
 import { IoMdClose } from "react-icons/io";
 import { BsFacebook } from "react-icons/bs";
 import { FcGoogle } from "react-icons/fc";
-import { BsTwitter } from "react-icons/bs";
+import { BsGithub } from "react-icons/bs";
 import {
   signInUserWithEmailAndPassword,
   signInWithFacebook,
   signInUserWithGoogle,
+  signInWithGithub,
 } from "../../utils/firebase";
 
 export const LogIn = () => {
@@ -69,6 +70,11 @@ export const LogIn = () => {
     console.log(result);
   };
 
+  const onClickSignInGithub = async () => {
+    const result = await signInWithGithub();
+    console.log(result);
+  };
+
   return (
     <LoginContainer>
       <h2>
@@ -86,9 +92,9 @@ export const LogIn = () => {
           <GoogleButton onClick={onClickSignInGoogle}>
             <FcGoogle />
           </GoogleButton>
-          <TwitterButton>
-            <BsTwitter />
-          </TwitterButton>
+          <GithubButton onClick={onClickSignInGithub}>
+            <BsGithub />
+          </GithubButton>
         </SocialMediaButtonsContainer>
         <CredentialsContainer onSubmit={onLoginSubmit}>
           <input type="email" placeholder="Email" onChange={onEmailChange} />
