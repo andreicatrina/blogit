@@ -19,6 +19,7 @@ import { BsTwitter } from "react-icons/bs";
 import {
   signInUserWithEmailAndPassword,
   signInWithFacebook,
+  signInUserWithGoogle,
 } from "../../utils/firebase";
 
 export const LogIn = () => {
@@ -63,6 +64,11 @@ export const LogIn = () => {
     console.log(result);
   };
 
+  const onClickSignInGoogle = async () => {
+    const result = await signInUserWithGoogle();
+    console.log(result);
+  };
+
   return (
     <LoginContainer>
       <h2>
@@ -77,7 +83,7 @@ export const LogIn = () => {
           <FacebookButton onClick={onclickSignInFacebook}>
             <BsFacebook />
           </FacebookButton>
-          <GoogleButton>
+          <GoogleButton onClick={onClickSignInGoogle}>
             <FcGoogle />
           </GoogleButton>
           <TwitterButton>
