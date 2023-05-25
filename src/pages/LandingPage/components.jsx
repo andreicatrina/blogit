@@ -23,6 +23,7 @@ export const SideMenuContainer = styled.div`
   padding: 12px;
   position: fixed;
   top: 60px;
+  height: 100%;
 `;
 
 export const PopularTrendsContainer = styled.div`

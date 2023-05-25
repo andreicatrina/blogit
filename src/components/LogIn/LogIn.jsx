@@ -22,6 +22,7 @@ import {
   signInUserWithGoogle,
   signInWithGithub,
 } from "../../utils/firebase";
+import { Link } from "react-router-dom";
 
 export const LogIn = () => {
   const [email, setEmail] = useState("");
@@ -106,7 +107,7 @@ export const LogIn = () => {
           <button>Log In</button>
           <ErrorParagraph>{error}</ErrorParagraph>
           <SuccessParagraph>{successLogin}</SuccessParagraph>
-          <a>No account? Sign up!</a>
+          <Link to="/reset">Forgot your password? Click here!</Link>
         </CredentialsContainer>
       </LoginInputsContainer>
     </LoginContainer>

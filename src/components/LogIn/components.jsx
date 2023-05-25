@@ -94,7 +94,7 @@ export const CredentialsContainer = styled.form`
     width: 100%;
     max-width: 210px;
     height: 40px;
-    margin-bottom: 24px;
+    margin-bottom: 12px;
     border-radius: 6px;
     font-family: "Noto Sans", sans-serif;
     font-size: 16px;
