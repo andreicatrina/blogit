@@ -4,6 +4,7 @@ import { GamingPage } from "./pages/GamingPage/GamingPage";
 import { Route, Routes } from "react-router-dom";
 import { SportsPage } from "./pages/SportsPage/SportsPage";
 import { PageLayout } from "./pages/PageLayout/PageLayout";
+import { ResetPasswordPage } from "./pages/ResetPasswordPage/ResetPasswordPage";
 
 export function App() {
   return (
@@ -12,6 +13,7 @@ export function App() {
         <Route path="/" element={<LandingPage />} />
         <Route path="/topic/gaming" element={<GamingPage />} />
         <Route path="/topic/sports" element={<SportsPage />} />
+        <Route path="/reset" element={<ResetPasswordPage />} />
       </Routes>
     </PageLayout>
   );
