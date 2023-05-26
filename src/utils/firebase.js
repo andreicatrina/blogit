@@ -9,6 +9,8 @@ import {
   signInWithPopup,
   GoogleAuthProvider,
   GithubAuthProvider,
+  sendEmailVerification,
+  sendPasswordResetEmail,
 } from "firebase/auth";
 // TODO: Add SDKs for Firebase products that you want to use
 // https://firebase.google.com/docs/web/setup#available-libraries
@@ -88,3 +90,9 @@ export const signInWithGithub = async () => {
     emailVerified: credential.user.emailVerified,
   };
 };
+
+export const resetUserPassword = async (resetEmail) => {
+  const authService = getAuth();
+
+  return sendPasswordResetEmail(authService, resetEmail)
+};;

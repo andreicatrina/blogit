@@ -36,7 +36,7 @@ export const ResetInputContainer = styled.div`
   }
 `;
 
-export const InputButtoForm = styled.form`
+export const InputButtonForm = styled.form`
   display: flex;
   align-items: center;
   gap: 12px;
@@ -76,4 +76,16 @@ export const InputButtoForm = styled.form`
   input::placeholder {
     color: var(--color-orange);
   }
+`;
+
+export const ErrorMessage = styled.p`
+  color: red;
+  font-size: 14px;
+  font-weight: 600;
+`;
+
+export const SuccessMessage = styled.p`
+  color: green;
+  font-size: 14px;
+  font-weight: 600;
 `;
